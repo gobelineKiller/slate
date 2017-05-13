@@ -87,7 +87,7 @@ propre client NOUTOnline.
 </div>
 
 
-## Concepts clés
+##Concepts clés
 
 Le dialogue commence toujours par une ouverture de session sécurisée avec l'appel de la méthode [GetTokenSession](#gettokensession)
 qui renvoi un jeton de session à fournir dans chaque requête. La session reste ouverte jusqu'à l'appel de la méthode 

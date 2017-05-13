@@ -532,7 +532,7 @@ html, body {
     background-color: $code-bg;
     color: #fff;
 
-    padding: 2em $main-padding;
+    padding: $code-annotation-extvertical-padding $main-padding;
     margin: 0;
     width: $examples-width;
 

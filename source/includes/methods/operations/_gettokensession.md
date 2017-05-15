@@ -146,7 +146,7 @@ NOUTOnline renvoit un token de session dans la balise `<SessionToken>`.
 Le token retourné est à conserver car il permet d'identifier la session courante de l'utilisateur et il devra être 
 ajouté dans le header de toutes les requêtes jusqu'à la déconnexion.
 
-Les entêtes retournés sont :
+Les entêtes retournées sont :
 
 * [ReturnType](#returntype) : toujours égal à Identification,
 * [ConnectedUser](#connecteduser) : information sur l'utilisateur SIMAX utilisé,

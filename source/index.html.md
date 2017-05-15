@@ -21,13 +21,21 @@ includes:
   - methods/operations/getcalculation
   - methods/operations/getcolinrecord
   - methods/operations/getendautomatism
+  - methods/operations/getlanguages
   - methods/operations/getstartautomatism
+  - methods/operations/gettablechild
+  - methods/operations/gettemporalautomatism
   - methods/operations/gettokensession
+  - methods/operations/haschanged
   - methods/operations/list
   - methods/operations/modify
   - methods/operations/print
   - methods/operations/request
+  - methods/operations/requestparam
+  - methods/operations/resetpasswordfailed
   - methods/operations/search
+  - methods/operations/selectform
+  - methods/operations/selectprinttemplate
   - methods/operations/transforminto
   - methods/operations/update
   - methods/operations/validate

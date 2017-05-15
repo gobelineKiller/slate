@@ -127,7 +127,7 @@ SOAP correspondent donc aux paramètres définis dans les actions du paramétrag
 
 ## Les formats de données
 
-### Les identifiants
+#### Les identifiants
 
 Les identifiants doivent être dans un des formats suivants : 
 
@@ -137,7 +137,7 @@ Les identifiants doivent être dans un des formats suivants :
 
 Si l'identifiant doit être inséré en tant que nom de balise, il doit être préfixé par `id_` 
 
-### Les dates et heures
+#### Les dates et heures
 
 Les dates et heures, au format stocké, sont dans le format suivant :
 
@@ -145,14 +145,14 @@ Les dates et heures, au format stocké, sont dans le format suivant :
 * date : `AAAAMMJJ`, exemple pour le 25/11/2007 on aura 20071125
 * heure : `HHMMSS`, exemple pour 11:23:56, on aura 112356
 
-### Les couleurs
+#### Les couleurs
 
 Les couleurs sont envoyées au format `BBVVRR` en valeurs hexadécimales. Exemple :
 
 * FF0000 pour du bleu
 * FFFFFF pour du blanc.
 
-### Les enregistrements
+#### Les enregistrements
 
 Les enregistrements peuvent être représentés par :
  
@@ -187,7 +187,7 @@ Les entêtes suivantes sont à ajouter obligatoirement aux entêtes HTTP :
 
 Lorsqu'une erreur se produit, le détail de celle dernière est retourné.
 
-### Format SOAP
+#### Format SOAP
 
 > Exemple d'erreur SOAP
 

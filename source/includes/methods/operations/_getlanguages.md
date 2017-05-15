@@ -1,4 +1,4 @@
-## GetLanguages
+### GetLanguages
 
 
 > Requête SOAP
@@ -39,11 +39,10 @@
 
 Cette opération permet de récupérer la liste des langues disponibles dans le paramétrage SIMAX lié au NOUTOnline utilisé.
 
-### Requête
-
 Cette méthode ne requiert aucune authentification, ni aucun paramètre.
 Vous pouvez l'appeler juste avant d'afficher la fenêtre de login et mot de passe afin que l'utilisateur choisisse sa langue.
 
+#### Requête
 
 Les entêtes acceptées sont :
 
@@ -53,7 +52,7 @@ Les entêtes acceptées sont :
 
 Il n'a pas de paramètres.
 
-### Réponse
+#### Réponse
 
 NOUTonline renvoie la liste des langues disponibles dans des balises `<LanguageCode>`
 

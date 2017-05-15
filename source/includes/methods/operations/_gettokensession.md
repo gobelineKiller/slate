@@ -1,5 +1,5 @@
 
-## GetTokenSession
+### GetTokenSession
 
 
 > Requête SOAP
@@ -109,7 +109,7 @@ L'entête à utiliser est [SessionToken](#sessiontoken)
 
 Cette fonction s'appuie sur les spécifications d'OASIS Web Service Security UserNameToken.
 
-### Requête
+#### Requête
 
 
 Les entêtes acceptées sont :
@@ -140,7 +140,7 @@ D'autres erreurs ayant traits à la sécurité peuvent être retournées (config
 * [EXTRANET_NONACTIVE](#erreur_extranet_nonactive) : l'extranet est désactivé
 * [CONNEXION_NONAUTORISE](#erreur_connexion_nonautorise) : les connexions ne sont pas autorisées
 
-### Réponse
+#### Réponse
 
 NOUTOnline renvoit un token de session dans la balise `<SessionToken>`.
 Le token retourné est à conserver car il permet d'identifier la session courante de l'utilisateur et il devra être 
@@ -154,7 +154,7 @@ Les entêtes retournées sont :
 * [ConnectedExtranet](#connectedextranet) (si authentification extranet),
 * [SessionLanguageCode](#sessionlanguagecode)
 
-### Mode Extranet
+#### Mode Extranet
 
 Pour une identification en mode extranet, l'identifiant et le mot de passe récoltés permettent de calculer le 
 `<UsernameToken>` fils de `<ExtranetUser>`.

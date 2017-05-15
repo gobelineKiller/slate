@@ -1,1 +1,1 @@
-## GetStartAutomatism
+### GetStartAutomatism

@@ -1,5 +1,5 @@
 
-## Opérations de gestion de la messagerie
+## Opérations de messagerie
 
 
 

@@ -68,7 +68,86 @@ includes:
   - methods/messagerie/withautomaticresponse
   - methods/messagerie/zippj
   - methods/headers
+  - mehtods/headers/action
+  - mehtods/headers/actioncontext
+  - mehtods/headers/apiuser
+  - mehtods/headers/apiuuid
+  - mehtods/headers/autovalidate
+  - mehtods/headers/connectedextranet
+  - mehtods/headers/connecteduser
+  - mehtods/headers/count
+  - mehtods/headers/customerinfos
+  - mehtods/headers/element
+  - mehtods/headers/filter
+  - mehtods/headers/form
+  - mehtods/headers/nextcall
+  - mehtods/headers/optiondialogue
+  - mehtods/headers/pjsizecheck
+  - mehtods/headers/planningfilter
+  - mehtods/headers/recipientcheck
+  - mehtods/headers/returntype
+  - mehtods/headers/sessionlanguagecode
+  - mehtods/headers/sessiontoken
+  - mehtods/headers/usernametoken
+  - mehtods/headers/validateerror
+  - mehtods/headers/xsdschema
   - methods/parameters
+  - methods/parameters/address
+  - methods/parameters/byuser
+  - methods/parameters/calculation
+  - methods/parameters/calculationlist
+  - methods/parameters/callingcolumn
+  - methods/parameters/checksum
+  - methods/parameters/collist
+  - methods/parameters/colorfrom
+  - methods/parameters/colorto
+  - methods/parameters/column
+  - methods/parameters/complete
+  - methods/parameters/condlist
+  - methods/parameters/context
+  - methods/parameters/createtype
+  - methods/parameters/datapj
+  - methods/parameters/defaultclientlanguagecode
+  - methods/parameters/elemsrc
+  - methods/parameters/encoding
+  - methods/parameters/enddate
+  - methods/parameters/endtime
+  - methods/parameters/extranetuser
+  - methods/parameters/filter
+  - methods/parameters/form
+  - methods/parameters/height
+  - methods/parameters/id
+  - methods/parameters/idanswertype
+  - methods/parameters/idfolder
+  - methods/parameters/idlist
+  - methods/parameters/idmessage
+  - methods/parameters/idpj
+  - methods/parameters/listmode
+  - methods/parameters/login
+  - methods/parameters/maxresult
+  - methods/parameters/message
+  - methods/parameters/messagetype
+  - methods/parameters/mimetype
+  - methods/parameters/paramxml
+  - methods/parameters/readonly
+  - methods/parameters/record
+  - methods/parameters/recursive
+  - methods/parameters/resource
+  - methods/parameters/responsetype
+  - methods/parameters/sentence
+  - methods/parameters/specialparamlist
+  - methods/parameters/startdate
+  - methods/parameters/starttime
+  - methods/parameters/table
+  - methods/parameters/tablesrc
+  - methods/parameters/template
+  - methods/parameters/transcolor
+  - methods/parameters/typeconfirmation
+  - methods/parameters/updatedata
+  - methods/parameters/usermessagerie
+  - methods/parameters/usernametoken
+  - methods/parameters/wantcontent
+  - methods/parameters/width
 
 search: true
 ---

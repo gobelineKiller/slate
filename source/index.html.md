@@ -68,29 +68,29 @@ includes:
   - methods/messagerie/withautomaticresponse
   - methods/messagerie/zippj
   - methods/headers
-  - mehtods/headers/action
-  - mehtods/headers/actioncontext
-  - mehtods/headers/apiuser
-  - mehtods/headers/apiuuid
-  - mehtods/headers/autovalidate
-  - mehtods/headers/connectedextranet
-  - mehtods/headers/connecteduser
-  - mehtods/headers/count
-  - mehtods/headers/customerinfos
-  - mehtods/headers/element
-  - mehtods/headers/filter
-  - mehtods/headers/form
-  - mehtods/headers/nextcall
-  - mehtods/headers/optiondialogue
-  - mehtods/headers/pjsizecheck
-  - mehtods/headers/planningfilter
-  - mehtods/headers/recipientcheck
-  - mehtods/headers/returntype
-  - mehtods/headers/sessionlanguagecode
-  - mehtods/headers/sessiontoken
-  - mehtods/headers/usernametoken
-  - mehtods/headers/validateerror
-  - mehtods/headers/xsdschema
+  - methods/headers/action
+  - methods/headers/actioncontext
+  - methods/headers/apiuser
+  - methods/headers/apiuuid
+  - methods/headers/autovalidate
+  - methods/headers/connectedextranet
+  - methods/headers/connecteduser
+  - methods/headers/count
+  - methods/headers/customerinfos
+  - methods/headers/element
+  - methods/headers/filter
+  - methods/headers/form
+  - methods/headers/nextcall
+  - methods/headers/optiondialogue
+  - methods/headers/pjsizecheck
+  - methods/headers/planningfilter
+  - methods/headers/recipientcheck
+  - methods/headers/returntype
+  - methods/headers/sessionlanguagecode
+  - methods/headers/sessiontoken
+  - methods/headers/usernametoken
+  - methods/headers/validateerror
+  - methods/headers/xsdschema
   - methods/parameters
   - methods/parameters/address
   - methods/parameters/byuser

@@ -99,6 +99,34 @@ http://noutonline:8052/GetTokenSession?
 </env:Envelope>
 ```
 
+> Authentification via le SOAPClient fourni par NOUT (intranet)
+
+```php
+<?php
+
+//-------------------------------------------------------------
+//ETAPE DE CONNEXION
+/** @var \Service\NOUTService $oSOAPClient */
+
+$usernameToken = new \Entity\UsernameToken('superviseur', '');
+//calcule le UsernameToken
+$usernameToken->ComputeCryptedPassword();
+
+//instantiation de la structure qui correspond aux paramètres la méthode GetTokenSession
+$stGetTokenSessionParam = new \WsdlToPhp\StructType\GetTokenSession($usernameToken);
+
+// appel de la méthode
+$result = $oSOAPClient->GetTokenSession($stGetTokenSessionParam);
+$oSOAPClient->log('GetTokenSession'); //affiche le log
+
+//on a le token de session qui va nous servir par la suite
+$sessionToken = $result->SessionToken;
+
+//on le donne au service ici, pas besoin de le faire après pour cette instance du service
+$oSOAPClient->setSoapHeaderSessionToken($sessionToken);
+?>
+```
+
 Cette opération permet de s'authentifier auprès de NOUTOnline et de récupérer un token de session, 
 à utiliser jusqu'à la déconnexion. C'est une étape obligatoire pour dialoguer avec NOUTOnline 
 car cela permet d'ouvrir une session. Pour cela, il faut demander son identifiant et son mot de passe à 

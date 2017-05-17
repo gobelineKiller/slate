@@ -12,8 +12,10 @@
 > Calcul du mot de passe
 
 ```php
+<?php
 $secret = !empty($password) ? base64_encode(md5($password, true)) : 'AAAAAAAAAAAAAAAAAAAAAA==';
 $encoded = base64_encode(sha1($nonce.$created.$secret, true));
+?>
 ```
 
 Ce paramètre permet de renseigner les informations nécessaire à l'identification suivant le standart [OASIS WS-Security 1.1](https://www.oasis-open.org/committees/download.php/16790/wss-v1.1-spec-os-SOAPMessageSecurity.pdf).

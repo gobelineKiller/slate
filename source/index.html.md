@@ -8,6 +8,7 @@ toc_footers:
 
 includes:
   - dialogue/presentation
+  - dialogue/format_xsd
   - methods/operations
   - methods/operations/cancel
   - methods/operations/confirmresponse

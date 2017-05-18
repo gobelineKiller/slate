@@ -155,7 +155,7 @@ withAddAndRemove | 1 si c'est un groupe de relation | 0
 		<li>Détail</li> 
 		<li>Modifier</li>  
 		<li>Supprimer</li> 
-		<li>Enlever</li>, 
+		<li>Enlever</li>
 		<li>Imprimer</li>
 	</ul>
 	</td>
@@ -201,7 +201,7 @@ la même manière que l'enregistrement.
 <tr>
 	<td>sectionLevel</td>
 	<td>
-		<dl>
+		<dl class="number">
 			<dt>1</dt><dd>séparateur principal (onglet)</dd>
 			<dt>2</dt><dd>séparateur secondaire</dd>
 			<dt>3</dt><dd>séquence de de champs</dd>
@@ -212,7 +212,7 @@ la même manière que l'enregistrement.
 <tr>
 	<td>multicolonne</td>
 	<td>
-		<dl>
+		<dl class="number">
 			<dt>1</dt><dd>pas de multicolonne</dd>
 			<dt>2</dt><dd>sur 2 colonnes</dd>
 			<dt>3</dt><dd>sur 3 colonnes</dd>
@@ -225,7 +225,7 @@ la même manière que l'enregistrement.
 <tr>
 	<td>direction</td>
 	<td>
-		<dl>
+		<dl class="number">
 			<dt>1</dt><dd>multicolonne horizontal</dd>
 			<dt>2</dt><dd>multicolonne vertical</dd>
 		</dl>

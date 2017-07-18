@@ -9,6 +9,7 @@ toc_footers:
 includes:
   - dialogue/presentation
   - dialogue/format_xsd
+  - tutorial/fonctionnementgen
   - methods/operations
   - methods/operations/cancel
   - methods/operations/confirmresponse
@@ -94,7 +95,6 @@ includes:
   - methods/headers/xsdschema
   - methods/parameters
   - methods/parameters/address
-  - methods/parameters/byuser
   - methods/parameters/calculation
   - methods/parameters/calculationlist
   - methods/parameters/callingcolumn
@@ -105,10 +105,8 @@ includes:
   - methods/parameters/column
   - methods/parameters/complete
   - methods/parameters/condlist
-  - methods/parameters/context
   - methods/parameters/createtype
   - methods/parameters/datapj
-  - methods/parameters/defaultclientlanguagecode
   - methods/parameters/elemsrc
   - methods/parameters/encoding
   - methods/parameters/enddate

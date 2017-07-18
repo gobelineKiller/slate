@@ -58,10 +58,11 @@ NOUTonline renvoie la liste des langues disponibles dans des balises `<LanguageC
 
 Les valeurs possibles sont :
 
-* 9 : anglais
-* 10 : espagnol
-* 12 : français 
-
+Langue | Code
+-------|-----
+Anglais | 9
+Espagnol | 10
+Français | 12
 
 Les entêtes retournées sont :
 

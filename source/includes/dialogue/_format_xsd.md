@@ -9,6 +9,7 @@ document XML respecte les règles décrites dans le document XSD. Contrairement 
 XSD respecte le format XML. 
 
 Le standard XSD a été approuvé par le W3C : 
+
 * [XML Schema Part 0: Primer Second Edition](http://www.w3.org/TR/xmlschema-0/)
 * [XML Schema Part 1: Structures Second Edition](http://www.w3.org/TR/xmlschema-1/)
 * [XML Schema Part 2: Datatypes Second Edition](http://www.w3.org/TR/xmlschema-2/)
@@ -74,6 +75,7 @@ une colonne invalide et donc qu'on peut ajouter un bouton pour filtrer sur les i
 ```
 
 Chaque colonne est décrite comme ceci :
+
 * balise `<xs:element>`
 * attribut `xs:name` dont la valeur est le libellé de la colonne transformé pour être utilisé dans la balise XML correspondante et pour respecter les standards XML.
 * attribut `simax:name`  dont la valeur est le libellé de la colonne dans le paramétrage SIMAX.

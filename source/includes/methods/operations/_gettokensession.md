@@ -148,9 +148,16 @@ Les entêtes acceptées sont :
 
 Les paramètres sont :
 
-* [UsernameToken](#usernametoken) : Information de connexion de l'utilisateur SIMAX,
-* [ExtranetUser](#extranetuser) : (facultatif) Information de connexion de l'utilisateur Extranet,
-* [DefaultClientLanguageCode](#defaultclientlanguagecode) : (facultatif) code langue désiré si paramétrage multilangue.
+* [UsernameToken](#usernametoken) : information de connexion de l'utilisateur SIMAX,
+* [ExtranetUser](#extranetuser) : (facultatif) information de connexion de l'utilisateur Extranet,
+* `DefaultClientLanguageCode` : (facultatif) (entier) code langue désiré pour la session (si paramétrage multilangue) ; les valeurs possibles sont :
+  * 12 Français
+
+<aside class="notice">
+Si la valeur de <code class="prettyprint">DefaultClientLanguageCode</code> est 0, NOUTOnline renvoi dans les entêtes 
+<a href="#sessionlanguagecode">SessionLanguageCode</a> le code de la langue par défaut.
+</aside>
+
 
 Si l'identification échoue, une erreur d'identification est retournée. Les erreurs possibles sont :
 

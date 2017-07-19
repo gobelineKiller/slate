@@ -1,4 +1,4 @@
-# Comment utiliser le webservice de NOUTOnline
+
 
 ## Fonctionnement général
 
@@ -6,10 +6,11 @@ Toutes les actions de manipulations de données se sont font pendant une session
 Cette dernière est [ouverte](#gettokensession) au début avant les manipulations et [fermée](#disconnect) à la fin des manipulations.
 
 Il y a 2 utilisateurs dans une session :
+
 * L'utilisateur qui rentre ses informations de connexion sur la page de connexion
 * L'utilisateur de l'application qui est configuré dans NOUTOnline. Lorsque que l'application fait une action qui a besoin de droit supérieur à l'utilisateur connecté (exemple : récupération des icones du menu), elle utilise l'entête [APIUser](#apiuser) pour indiquer que l'action est faite par l'application et non pas par l'utilisateur.
 
-Afin de sécurisé le service, il est possible de filtrer les applications qui y accèdent. Ces dernières doivent alors ajouter l'entête [APIUUID](#apiuuid) avec l'identifiant qui leur a été attribuée.
+Afin de sécuriser le service, il est possible de filtrer les applications qui y accèdent. Ces dernières doivent alors ajouter l'entête [APIUUID](#apiuuid) avec l'identifiant qui leur a été attribuée.
 
 L'ensemble des actions sont regroupés en ***contexte d'action*** quand les actions ont un lien entre elles. Par exemple : les actions de création d'une commande et de ses lignes de commandes apartiennent au même contexte.
 

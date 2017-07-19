@@ -9,7 +9,6 @@ toc_footers:
 includes:
   - dialogue/presentation
   - dialogue/format_xsd
-  - tutorial/fonctionnementgen
   - methods/operations
   - methods/operations/cancel
   - methods/operations/confirmresponse
@@ -147,6 +146,9 @@ includes:
   - methods/parameters/usernametoken
   - methods/parameters/wantcontent
   - methods/parameters/width
+  - tutorial/tutoriaux
+  - tutorial/gestionsession
+  - tutorial/creerenreg
 
 search: true
 ---

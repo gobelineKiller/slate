@@ -7,7 +7,7 @@
 <?php
 
 $nPort = 8052;
-$sNoutonlineAddress = '127.0.0.1';
+$sHost = '127.0.0.1';
 
 //autoload des classes
 spl_autoload_extensions(".php"); // comma-separated list
@@ -23,8 +23,8 @@ $options = array(
         'http' => array(
         	'header' => "x-SIMAXService-Client: Proxy-SOAPClient\nx-SIMAXService-Client-Version: 01.1631.01\nx-SIMAXService-Client-IP: ".$_SERVER["REMOTE_ADDR"],
         ))),
-    AbstractSoapClientBase::WSDL_URL => "http://$sNoutonlineAddress:$nPort/getwsdl",
-    AbstractSoapClientBase::WSDL_PROXY_HOST => "$sNoutonlineAddress",
+    AbstractSoapClientBase::WSDL_URL => "http://$sHost:$nPort/getwsdl",
+    AbstractSoapClientBase::WSDL_PROXY_HOST => $sHost,
     AbstractSoapClientBase::WSDL_PROXY_PORT => "$nPort",
     AbstractSoapClientBase::WSDL_CLASSMAP => \WsdlToPhp\ClassMap::get(),
     AbstractSoapClientBase::WSDL_SOAP_VERSION => SOAP_1_1,

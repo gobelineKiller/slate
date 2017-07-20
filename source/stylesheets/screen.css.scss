@@ -35,6 +35,11 @@ html, body {
   -webkit-text-size-adjust: none; /* Never autoresize text */
 }
 
+p:not(:empty) + ul {
+  margin-top: -1em;
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 ////////////////////////////////////////////////////////////////////////////////
@@ -696,6 +701,8 @@ $timeline-color: #fff;
 $client-color: #fff;
 $server-color: #fff;
 
+$timeline-step-width: 4em;
+
 .timeline {
   position: relative;
   overflow: auto;
@@ -815,7 +822,7 @@ $server-color: #fff;
 
         &:nth-child(even) {
           float: right;
-          margin-top: 2em;
+          margin-top: $timeline-step-width;
         }
 
         &:nth-child(odd) {

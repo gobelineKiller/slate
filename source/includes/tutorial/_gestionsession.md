@@ -23,11 +23,11 @@ L'entête à utiliser est [SessionToken](#sessiontoken).
 $sLogin = 'superviseur';
 $sMdp = '';
 
-$usernameToken = new \Entity\UsernameToken($sLogin, $sMdp);
+$usernameToken = new \NOUTSoap\Entity\UsernameToken($sLogin, $sMdp);
 $usernameToken->ComputeCryptedPassword();//calcule le UsernameToken
 
 //instantiation de la structure qui correspond aux paramètres la méthode GetTokenSession
-$stGetTokenSessionParam = new \WsdlToPhp\StructType\GetTokenSession($usernameToken);
+$stGetTokenSessionParam = new \NOUTSoap\StructType\GetTokenSession($usernameToken);
 
 // appel de la méthode
 $result = $oSOAPClient->GetTokenSession($stGetTokenSessionParam);
@@ -69,17 +69,17 @@ $sMdpExtra = 'mon mot de passe';
 
 //identification de l'utilisateur SIMAX
 //c'est cet objet qu'on garde pour recalculer l'entête UsernameToken pour les requetes suivantes.
-$usernameToken = new \Entity\UsernameToken($sLogin, $sMdp); 
+$usernameToken = new \NOUTSoap\Entity\UsernameToken($sLogin, $sMdp); 
 $usernameToken->ComputeCryptedPassword();//calcule le UsernameToken
 
 //identification extranet
-$usernameTokenExtranet = new \Entity\UsernameToken($sLoginExtra, $sMdpExtra);
+$usernameTokenExtranet = new \NOUTSoap\Entity\UsernameToken($sLoginExtra, $sMdpExtra);
 $usernameTokenExtranet->ComputeCryptedPassword();//calcule le UsernameToken
-$extranetUser = new \WsdlToPhp\StructType\ExtranetUserType($usernameTokenExtranet, $sFormExtra);
+$extranetUser = new \NOUTSoap\StructType\ExtranetUserType($usernameTokenExtranet, $sFormExtra);
 
 //-------------------------------------------------------------
 //ETAPE DE CONNEXION
-$stGetTokenSessionParam = new \WsdlToPhp\StructType\GetTokenSession($usernameToken, $extranetUser);
+$stGetTokenSessionParam = new \NOUTSoap\StructType\GetTokenSession($usernameToken, $extranetUser);
 $result = $oSOAPClient->GetTokenSession($stGetTokenSessionParam);
 $oSOAPClient->log('GetTokenSession');
 

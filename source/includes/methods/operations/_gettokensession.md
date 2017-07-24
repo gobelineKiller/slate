@@ -108,12 +108,12 @@ http://noutonline:8052/GetTokenSession?
 //ETAPE DE CONNEXION
 /** @var \Service\NOUTService $oSOAPClient */
 
-$usernameToken = new \Entity\UsernameToken('superviseur', '');
+$usernameToken = new \NOUTSoap\Entity\UsernameToken('superviseur', '');
 //calcule le UsernameToken
 $usernameToken->ComputeCryptedPassword();
 
 //instantiation de la structure qui correspond aux paramètres la méthode GetTokenSession
-$stGetTokenSessionParam = new \WsdlToPhp\StructType\GetTokenSession($usernameToken);
+$stGetTokenSessionParam = new \NOUTSoap\StructType\GetTokenSession($usernameToken);
 
 // appel de la méthode
 $result = $oSOAPClient->GetTokenSession($stGetTokenSessionParam);

@@ -1,0 +1,14 @@
+{
+    "name": "NOUTWeb/NOUTSOAPClient",
+    "description": "Package generated from C:/wamp/www/wsdltophp/1150.04.wsdl using wsdltophp/packagegenerator",
+    "require": {
+        "php": ">=5.3.3",
+        "ext-soap": "*",
+        "wsdltophp/packagebase": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "NOUTSoap\\": "./src/"
+        }
+    }
+}

@@ -26,11 +26,11 @@ $options = array(
     AbstractSoapClientBase::WSDL_URL => "http://$sHost:$nPort/getwsdl",
     AbstractSoapClientBase::WSDL_PROXY_HOST => $sHost,
     AbstractSoapClientBase::WSDL_PROXY_PORT => "$nPort",
-    AbstractSoapClientBase::WSDL_CLASSMAP => \WsdlToPhp\ClassMap::get(),
+    AbstractSoapClientBase::WSDL_CLASSMAP => \NOUTSoap\ClassMap::get(),
     AbstractSoapClientBase::WSDL_SOAP_VERSION => SOAP_1_1,
 );
 // on crée le client SOAP
-$oSOAPClient = new \WsdlToPhp\ServiceType\Service($options);
+$oSOAPClient = new \NOUTSoap\ServiceType\Service($options);
 
 ?>
 ```

@@ -13,7 +13,7 @@ $sHost = '127.0.0.1';
 spl_autoload_extensions(".php"); // comma-separated list
 spl_autoload_register();
 
-use WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use \NOUTSoap\PackageBase\AbstractSoapClientBase;
 
 //définition des options pour le client SOAP
 $options = array(
@@ -40,8 +40,8 @@ Avant de lire les différents tutoriaux, veuillez lire la partie [Dialoguer avec
 
 Les tutoriaux disponible sont :
 
-* Ouvrir et fermer une session
-* Créer un enregistrement
+* [Ouvrir et fermer une session](#ouvrir-et-fermer-une-session)
+* [Créer un enregistrement](#cr-er-un-enregistrement)
 * Modifier un enregistrement
 * Supprimer un enregistrement
 * Afficher une liste

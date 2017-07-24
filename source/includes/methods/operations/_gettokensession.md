@@ -2,7 +2,7 @@
 ### GetTokenSession
 
 
-> Requête SOAP
+> Requête SOAP (intranet)
 
 ```xml
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
@@ -36,11 +36,53 @@
 </SOAP-ENV:Envelope>
 ```
 
-> Requête REST
+
+> Requête REST (intranet)
 
 ```http
 http://noutonline:8052/GetTokenSession?
 ```
+
+
+
+
+Cette opération permet de s'authentifier auprès de NOUTOnline et de récupérer un token de session, 
+à utiliser jusqu'à la déconnexion. C'est une étape obligatoire pour dialoguer avec NOUTOnline 
+car cela permet d'ouvrir une session. Pour cela, il faut demander son identifiant et son mot de passe à 
+l'utilisateur pour pouvoir calculer le [UsernameToken](#usernametoken).
+
+Le token de session récolté devra être passé dans le Header de toutes les requêtes jusqu'à la fermeture de la session. 
+L'entête à utiliser est [SessionToken](#sessiontoken)
+
+Cette fonction s'appuie sur les spécifications d'OASIS Web Service Security UserNameToken.
+
+Voir le tutoriel [Ouvrir et Fermer une session](#ouvrir-et-fermer-une-session) pour le code PHP.
+
+#### Requête
+
+
+Les entêtes acceptées sont :
+
+* [CustomerInfos](#customerinfos) (facultatif),
+* [OptionDialogue](#optiondialogue) (facultatif),
+* [APIUUID](#apiuuid) (facultatif).
+
+Les paramètres sont :
+
+* [UsernameToken](#usernametoken) : information de connexion de l'utilisateur SIMAX,
+* [ExtranetUser](#extranetuser) : (facultatif) information de connexion de l'utilisateur Extranet,
+* `DefaultClientLanguageCode` : (facultatif) (entier) code langue désiré pour la session (si paramétrage multilangue) ; les valeurs possibles sont :
+  * 12 Français
+
+<aside class="notice">
+Si la valeur de <code class="prettyprint">DefaultClientLanguageCode</code> est 0, NOUTOnline renvoi dans les entêtes 
+<a href="#sessionlanguagecode">SessionLanguageCode</a> le code de la langue par défaut.
+</aside>
+
+
+
+#### Réponse
+
 
 > Reponse SOAP : succès
 
@@ -99,64 +141,18 @@ http://noutonline:8052/GetTokenSession?
 </env:Envelope>
 ```
 
-> Authentification via le SOAPClient fourni par NOUT (intranet)
 
-```php
-<?php
+NOUTOnline renvoit un token de session dans la balise `<SessionToken>`.
+Le token retourné est à conserver car il permet d'identifier la session courante de l'utilisateur et il devra être 
+ajouté dans le header de toutes les requêtes jusqu'à la déconnexion.
 
-//-------------------------------------------------------------
-//ETAPE DE CONNEXION
-/** @var \Service\NOUTService $oSOAPClient */
+Les entêtes retournées sont :
 
-$usernameToken = new \NOUTSoap\Entity\UsernameToken('superviseur', '');
-//calcule le UsernameToken
-$usernameToken->ComputeCryptedPassword();
-
-//instantiation de la structure qui correspond aux paramètres la méthode GetTokenSession
-$stGetTokenSessionParam = new \NOUTSoap\StructType\GetTokenSession($usernameToken);
-
-// appel de la méthode
-$result = $oSOAPClient->GetTokenSession($stGetTokenSessionParam);
-$oSOAPClient->log('GetTokenSession'); //affiche le log
-
-//on a le token de session qui va nous servir par la suite
-$sessionToken = $result->SessionToken;
-
-//on le donne au service ici, pas besoin de le faire après pour cette instance du service
-$oSOAPClient->setSoapHeaderSessionToken($sessionToken);
-?>
-```
-
-Cette opération permet de s'authentifier auprès de NOUTOnline et de récupérer un token de session, 
-à utiliser jusqu'à la déconnexion. C'est une étape obligatoire pour dialoguer avec NOUTOnline 
-car cela permet d'ouvrir une session. Pour cela, il faut demander son identifiant et son mot de passe à 
-l'utilisateur pour pouvoir calculer le [UsernameToken](#usernametoken).
-
-Le token de session récolté devra être passé dans le Header de toutes les requêtes jusqu'à la fermeture de la session. 
-L'entête à utiliser est [SessionToken](#sessiontoken)
-
-Cette fonction s'appuie sur les spécifications d'OASIS Web Service Security UserNameToken.
-
-#### Requête
-
-
-Les entêtes acceptées sont :
-
-* [CustomerInfos](#customerinfos) (facultatif),
-* [OptionDialogue](#optiondialogue) (facultatif),
-* [APIUUID](#apiuuid) (facultatif).
-
-Les paramètres sont :
-
-* [UsernameToken](#usernametoken) : information de connexion de l'utilisateur SIMAX,
-* [ExtranetUser](#extranetuser) : (facultatif) information de connexion de l'utilisateur Extranet,
-* `DefaultClientLanguageCode` : (facultatif) (entier) code langue désiré pour la session (si paramétrage multilangue) ; les valeurs possibles sont :
-  * 12 Français
-
-<aside class="notice">
-Si la valeur de <code class="prettyprint">DefaultClientLanguageCode</code> est 0, NOUTOnline renvoi dans les entêtes 
-<a href="#sessionlanguagecode">SessionLanguageCode</a> le code de la langue par défaut.
-</aside>
+* [ReturnType](#returntype) : toujours égal à Identification,
+* [ConnectedUser](#connecteduser) : information sur l'utilisateur SIMAX utilisé,
+* [CustomerInfos](#customerinfos) (si fourni dans l'entête),
+* [ConnectedExtranet](#connectedextranet) (si authentification extranet),
+* [SessionLanguageCode](#sessionlanguagecode)
 
 
 Si l'identification échoue, une erreur d'identification est retournée. Les erreurs possibles sont :
@@ -175,21 +171,48 @@ D'autres erreurs ayant traits à la sécurité peuvent être retournées (config
 * [EXTRANET_NONACTIVE](#erreur_extranet_nonactive) : l'extranet est désactivé
 * [CONNEXION_NONAUTORISE](#erreur_connexion_nonautorise) : les connexions ne sont pas autorisées
 
-#### Réponse
-
-NOUTOnline renvoit un token de session dans la balise `<SessionToken>`.
-Le token retourné est à conserver car il permet d'identifier la session courante de l'utilisateur et il devra être 
-ajouté dans le header de toutes les requêtes jusqu'à la déconnexion.
-
-Les entêtes retournées sont :
-
-* [ReturnType](#returntype) : toujours égal à Identification,
-* [ConnectedUser](#connecteduser) : information sur l'utilisateur SIMAX utilisé,
-* [CustomerInfos](#customerinfos) (si fourni dans l'entête),
-* [ConnectedExtranet](#connectedextranet) (si authentification extranet),
-* [SessionLanguageCode](#sessionlanguagecode)
 
 #### Mode Extranet
+
+> Requête SOAP (extranet)
+
+```xml
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+    <SOAP-ENV:Header>
+        <OptionDialogue>
+            <Readable>0</Readable>
+            <DisplayValue>16638</DisplayValue>
+            <EncodingOutput>0</EncodingOutput>
+            <LanguageCode>12</LanguageCode>
+            <WithFieldStateControl>1</WithFieldStateControl>
+        </OptionDialogue>
+        <APIUUID/>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <GetTokenSession xmlns="http://www.nout.fr/wsdl/SimaxService.wsdl/">
+            <UsernameToken>
+	            <Username>extranet authentifié</Username>
+	            <Password>3380nSjvFIiiLRX9zFmNIcLHmGE=</Password>
+	            <Nonce>MC42NDE2OTQwMCAxNTAwOTEwMjM4</Nonce>
+	            <Created>Mon, 24 Jul 2017 17:30:38 +0200</Created>
+            </UsernameToken>
+            <ExtranetUser>
+	            <UsernameToken>
+					<Username>conan2</Username>
+					<Password>nGyVm65soPgm9W7VXUJnJfT2e1s=</Password>
+					<Nonce>MC42NDE3NjMwMCAxNTAwOTEwMjM4</Nonce>
+					<Created>Mon, 24 Jul 2017 17:30:38 +0200</Created>
+	            </UsernameToken>
+                <Form>224661136955914</Form>
+            </ExtranetUser>
+        </GetTokenSession>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
+
 
 Pour une identification en mode extranet, l'identifiant et le mot de passe récoltés permettent de calculer le 
 `<UsernameToken>` fils de `<ExtranetUser>`.

@@ -327,6 +327,8 @@ abstract class AbstractSoapClientBase implements SoapClientInterface
         }
         return $this;
     }
+
+
     /**
      * Sets the SoapClient Stream context HTTP Header name according to its value
      * If a context already exists, it tries to modify it

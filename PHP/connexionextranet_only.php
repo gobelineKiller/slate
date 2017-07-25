@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>SoapClient</title>
+<title>SOAPClient - Connexion extranet</title>
 </head>
 <body>
 <?php
@@ -33,6 +33,7 @@ $oSOAPClient->log('GetTokenSession');
 //on a le token de session qui va nous servir par la suite
 $sessionToken = $result->SessionToken;
 $oSOAPClient->setSoapHeaderSessionToken($sessionToken);
+$oSOAPClient->setSoapHeaderUsernameToken($usernameToken); //sera recalculer automatiquement
 
 
 //-------------------------------------------------------------
@@ -40,10 +41,6 @@ $oSOAPClient->setSoapHeaderSessionToken($sessionToken);
 
 $oSOAPClient->setSoapHeaderActionContext(null);
 $oSOAPClient->setSoapHeaderAutoValidate(null);
-
-//on recalcule le username token
-$usernameToken->ComputeCryptedPassword();
-$oSOAPClient->setSoapHeaderUsernameToken($usernameToken);
 
 $result = $oSOAPClient->Disconnect(null);
 $oSOAPClient->log('Disconnect');

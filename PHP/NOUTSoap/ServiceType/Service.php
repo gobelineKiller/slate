@@ -30,6 +30,17 @@ class Service extends AbstractSoapClientBase
         return $oSoapClient;
     }
 
+
+    /**
+     * @param       $functionName
+     * @param mixed $aparameters
+     * @return mixed
+     */
+    protected function __soapCall($functionName, $aparameters)
+    {
+        return parent::__soapCall($functionName, array(get_class($aparameters) => $aparameters));
+    }
+
     /**
      * Sets the APIUUID SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
@@ -175,7 +186,7 @@ class Service extends AbstractSoapClientBase
     public function GetTokenSession(\NOUTSoap\StructType\GetTokenSession $parameters)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetTokenSession($parameters));
+            $this->setResult($this->__soapCall('GetTokenSession', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -199,7 +210,7 @@ class Service extends AbstractSoapClientBase
     public function ResetPasswordFailed(\NOUTSoap\StructType\ResetPasswordFailed $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->ResetPasswordFailed($parameters));
+            $this->setResult($this->__soapCall('ResetPasswordFailed', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -224,7 +235,7 @@ class Service extends AbstractSoapClientBase
     public function GetStartAutomatism(\NOUTSoap\StructType\GetStartAutomatism $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetStartAutomatism($parameters));
+            $this->setResult($this->__soapCall('GetStartAutomatism', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -249,7 +260,7 @@ class Service extends AbstractSoapClientBase
     public function ConfirmResponse(\NOUTSoap\StructType\ConfirmResponse $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->ConfirmResponse($parameters));
+            $this->setResult($this->__soapCall('ConfirmResponse', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -299,7 +310,7 @@ class Service extends AbstractSoapClientBase
     public function SelectForm(\NOUTSoap\StructType\SelectForm $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->SelectForm($parameters));
+            $this->setResult($this->__soapCall('SelectForm', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -324,7 +335,7 @@ class Service extends AbstractSoapClientBase
     public function SelectPrintTemplate(\NOUTSoap\StructType\SelectPrintTemplate $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->SelectPrintTemplate($parameters));
+            $this->setResult($this->__soapCall('SelectPrintTemplate', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -349,7 +360,7 @@ class Service extends AbstractSoapClientBase
     public function GetPlanningInfo(\NOUTSoap\StructType\GetPlanningInfo $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetPlanningInfo($parameters));
+            $this->setResult($this->__soapCall('GetPlanningInfo', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -374,7 +385,7 @@ class Service extends AbstractSoapClientBase
     public function GetColInRecord(\NOUTSoap\StructType\GetColInRecord $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetColInRecord($parameters));
+            $this->setResult($this->__soapCall('GetColInRecord', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -400,7 +411,7 @@ class Service extends AbstractSoapClientBase
     public function Display(\NOUTSoap\StructType\Display $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Display($parameters));
+            $this->setResult($this->__soapCall('Display', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -426,7 +437,7 @@ class Service extends AbstractSoapClientBase
     public function Create(\NOUTSoap\StructType\Create $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Create($parameters));
+            $this->setResult($this->__soapCall('Create', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -452,7 +463,7 @@ class Service extends AbstractSoapClientBase
     public function CreateFrom(\NOUTSoap\StructType\CreateFrom $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->CreateFrom($parameters));
+            $this->setResult($this->__soapCall('CreateFrom', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -478,7 +489,7 @@ class Service extends AbstractSoapClientBase
     public function TransformInto(\NOUTSoap\StructType\TransformInto $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->TransformInto($parameters));
+            $this->setResult($this->__soapCall('TransformInto', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -504,7 +515,7 @@ class Service extends AbstractSoapClientBase
     public function Modify(\NOUTSoap\StructType\Modify $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Modify($parameters));
+            $this->setResult($this->__soapCall('Modify', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -530,7 +541,7 @@ class Service extends AbstractSoapClientBase
     public function Update(\NOUTSoap\StructType\Update $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Update($parameters));
+            $this->setResult($this->__soapCall('Update', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -556,7 +567,7 @@ class Service extends AbstractSoapClientBase
     public function _Print(\NOUTSoap\StructType\_Print $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Print($parameters));
+            $this->setResult($this->__soapCall('Print', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -582,7 +593,7 @@ class Service extends AbstractSoapClientBase
     public function Delete(\NOUTSoap\StructType\Delete $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Delete($parameters));
+            $this->setResult($this->__soapCall('Delete', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -608,7 +619,7 @@ class Service extends AbstractSoapClientBase
     public function Execute(\NOUTSoap\StructType\Execute $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Execute($parameters));
+            $this->setResult($this->__soapCall('Execute', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -658,7 +669,7 @@ class Service extends AbstractSoapClientBase
     public function Cancel(\NOUTSoap\StructType\Cancel $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Cancel($parameters));
+            $this->setResult($this->__soapCall('Cancel', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -684,7 +695,7 @@ class Service extends AbstractSoapClientBase
     public function _List(\NOUTSoap\StructType\_List $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->List($parameters));
+            $this->setResult($this->__soapCall('List', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -709,7 +720,7 @@ class Service extends AbstractSoapClientBase
     public function GetCalculation(\NOUTSoap\StructType\GetCalculation $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetCalculation($parameters));
+            $this->setResult($this->__soapCall('GetCalculation', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -735,7 +746,7 @@ class Service extends AbstractSoapClientBase
     public function Search(\NOUTSoap\StructType\Search $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Search($parameters));
+            $this->setResult($this->__soapCall('Search', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -761,7 +772,7 @@ class Service extends AbstractSoapClientBase
     public function Request(\NOUTSoap\StructType\Request $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Request($parameters));
+            $this->setResult($this->__soapCall('Request', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -787,7 +798,7 @@ class Service extends AbstractSoapClientBase
     public function RequestParam(\NOUTSoap\StructType\RequestParam $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->RequestParam($parameters));
+            $this->setResult($this->__soapCall('RequestParam', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -837,7 +848,7 @@ class Service extends AbstractSoapClientBase
     public function GetEndAutomatism(\NOUTSoap\StructType\GetEndAutomatism $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetEndAutomatism($parameters));
+            $this->setResult($this->__soapCall('GetEndAutomatism', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -886,7 +897,7 @@ class Service extends AbstractSoapClientBase
     public function GetTableChild(\NOUTSoap\StructType\GetTableChild $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetTableChild($parameters));
+            $this->setResult($this->GetTableChild('GetTableChild', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -911,7 +922,7 @@ class Service extends AbstractSoapClientBase
     public function GetContentFolder(\NOUTSoap\StructType\GetContentFolder $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetContentFolder($parameters));
+            $this->setResult($this->__soapCall('GetContentFolder', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -936,7 +947,7 @@ class Service extends AbstractSoapClientBase
     public function ModifyFolder(\NOUTSoap\StructType\ModifyFolder $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->ModifyFolder($parameters));
+            $this->setResult($this->__soapCall('ModifyFolder', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -961,7 +972,7 @@ class Service extends AbstractSoapClientBase
     public function UpdateFolder(\NOUTSoap\StructType\UpdateFolder $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->UpdateFolder($parameters));
+            $this->setResult($this->__soapCall('UpdateFolder', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1010,7 +1021,7 @@ class Service extends AbstractSoapClientBase
     public function DeleteFolder(\NOUTSoap\StructType\DeleteFolder $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->DeleteFolder($parameters));
+            $this->setResult($this->__soapCall('DeleteFolder', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1034,7 +1045,7 @@ class Service extends AbstractSoapClientBase
     public function ValidateFolder(\NOUTSoap\StructType\ValidateFolder $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->ValidateFolder($parameters));
+            $this->setResult($this->__soapCall('ValidateFolder', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1058,7 +1069,7 @@ class Service extends AbstractSoapClientBase
     public function CancelFolder(\NOUTSoap\StructType\CancelFolder $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->CancelFolder($parameters));
+            $this->setResult($this->__soapCall('CancelFolder', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1107,7 +1118,7 @@ class Service extends AbstractSoapClientBase
     public function CloseFolderList(\NOUTSoap\StructType\CloseFolderList $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->CloseFolderList($parameters));
+            $this->setResult($this->__soapCall('CloseFolderList', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1132,7 +1143,7 @@ class Service extends AbstractSoapClientBase
     public function RequestMessage(\NOUTSoap\StructType\RequestMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->RequestMessage($parameters));
+            $this->setResult($this->__soapCall('RequestMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1157,7 +1168,7 @@ class Service extends AbstractSoapClientBase
     public function GetListMessage(\NOUTSoap\StructType\GetListMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetListMessage($parameters));
+            $this->setResult($this->__soapCall('GetListMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1181,7 +1192,7 @@ class Service extends AbstractSoapClientBase
     public function CloseMessageList(\NOUTSoap\StructType\CloseMessageList $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->CloseMessageList($parameters));
+            $this->setResult($this->__soapCall('CloseMessageList', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1206,7 +1217,7 @@ class Service extends AbstractSoapClientBase
     public function ModifyMessage(\NOUTSoap\StructType\ModifyMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->ModifyMessage($parameters));
+            $this->setResult($this->__soapCall('ModifyMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1231,7 +1242,7 @@ class Service extends AbstractSoapClientBase
     public function UpdateMessage(\NOUTSoap\StructType\UpdateMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->UpdateMessage($parameters));
+            $this->setResult($this->__soapCall('UpdateMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1256,7 +1267,7 @@ class Service extends AbstractSoapClientBase
     public function CreateMessage(\NOUTSoap\StructType\CreateMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->CreateMessage($parameters));
+            $this->setResult($this->__soapCall('CreateMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1280,7 +1291,7 @@ class Service extends AbstractSoapClientBase
     public function SendMessage(\NOUTSoap\StructType\SendMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->SendMessage($parameters));
+            $this->setResult($this->__soapCall('SendMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1304,7 +1315,7 @@ class Service extends AbstractSoapClientBase
     public function CancelMessage(\NOUTSoap\StructType\CancelMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->CancelMessage($parameters));
+            $this->setResult($this->__soapCall('CancelMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1329,7 +1340,7 @@ class Service extends AbstractSoapClientBase
     public function InitRecordFromMessage(\NOUTSoap\StructType\InitRecordFromMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->InitRecordFromMessage($parameters));
+            $this->setResult($this->__soapCall('InitRecordFromMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1354,7 +1365,7 @@ class Service extends AbstractSoapClientBase
     public function InitRecordFromAddress(\NOUTSoap\StructType\InitRecordFromAddress $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->InitRecordFromAddress($parameters));
+            $this->setResult($this->__soapCall('InitRecordFromAddress', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1378,7 +1389,7 @@ class Service extends AbstractSoapClientBase
     public function GetPJ(\NOUTSoap\StructType\GetPJ $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetPJ($parameters));
+            $this->setResult($this->__soapCall('GetPJ', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1402,7 +1413,7 @@ class Service extends AbstractSoapClientBase
     public function DeletePJ(\NOUTSoap\StructType\DeletePJ $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->DeletePJ($parameters));
+            $this->setResult($this->__soapCall('DeletePJ', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1426,7 +1437,7 @@ class Service extends AbstractSoapClientBase
     public function AddPJ(\NOUTSoap\StructType\AddPJ $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->AddPJ($parameters));
+            $this->setResult($this->__soapCall('AddPJ', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1450,7 +1461,7 @@ class Service extends AbstractSoapClientBase
     public function ZipPJ(\NOUTSoap\StructType\ZipPJ $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->ZipPJ($parameters));
+            $this->setResult($this->__soapCall('ZipPJ', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1474,7 +1485,7 @@ class Service extends AbstractSoapClientBase
     public function CheckRecipient(\NOUTSoap\StructType\CheckRecipient $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->CheckRecipient($parameters));
+            $this->setResult($this->__soapCall('CheckRecipient', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1498,7 +1509,7 @@ class Service extends AbstractSoapClientBase
     public function CheckCreateElement(\NOUTSoap\StructType\CheckCreateElement $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->CheckCreateElement($parameters));
+            $this->setResult($this->__soapCall('CheckCreateElement', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1546,7 +1557,7 @@ class Service extends AbstractSoapClientBase
     public function WithAutomaticResponse(\NOUTSoap\StructType\WithAutomaticResponse $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->WithAutomaticResponse($parameters));
+            $this->setResult($this->__soapCall('WithAutomaticResponse', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

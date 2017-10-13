@@ -10,7 +10,7 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-$nPort = 8062;
+$nPort = 8092; //homer simaxv12
 $sHost = 'localhost';
 $sLogin = 'superviseur';
 $sMdp = '';
@@ -35,3 +35,13 @@ $options = array(
 );
 // if getList operation is provided by the Web service
 $oSOAPClient = new \NOUTSoap\ServiceType\Service($options);
+
+
+
+function debug_log($titre, $message)
+{
+    echo "<h1>$titre</h1>";
+    echo "<pre style=\"border: solid 1px red;\">";
+    echo $message;
+    echo "</pre>";
+}

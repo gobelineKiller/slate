@@ -41,6 +41,146 @@ class Service extends AbstractSoapClientBase
         return parent::__soapCall($functionName, array(get_class($aparameters) => $aparameters));
     }
 
+
+
+    /**
+     * @return string
+     */
+    public function getSoapHeaderReturnType()
+    {
+        return $this->outputHeaders['ReturnType'];
+    }
+
+    /**
+     * @return string
+     */
+    public function getSoapHeaderActionContext()
+    {
+        return $this->outputHeaders['ActionContext'];
+    }
+
+    /**
+     * @return string
+     */
+    public function getSoapHeaderXSDSchema()
+    {
+        return $this->outputHeaders['XSDSchema'];
+    }
+
+    /**
+     * @return \NOUTSoap\StructType\Action
+     */
+    public function getSoapHeaderAction()
+    {
+        return $this->outputHeaders['Action'];
+    }
+
+    /**
+     * @return \NOUTSoap\StructType\Filter
+     */
+    public function getSoapHeaderFilter()
+    {
+        return $this->outputHeaders['Filter'];
+    }
+
+    /**
+     * @return \NOUTSoap\StructType\PlanningFilter
+     */
+    public function getSoapHeaderPlanningFilter()
+    {
+        return $this->outputHeaders['PlanningFilter'];
+    }
+
+    /**
+     * @return \NOUTSoap\StructType\ConnectedUser
+     */
+    public function getSoapHeaderConnectedUser()
+    {
+        return $this->outputHeaders['ConnectedUser'];
+    }
+
+    /**
+     * @return \NOUTSoap\StructType\ConnectedExtranet
+     */
+    public function getSoapHeaderConnectedExtranet()
+    {
+        return $this->outputHeaders['ConnectedExtranet'];
+    }
+
+
+    /**
+     * @return \NOUTSoap\StructType\Form
+     */
+    public function getSoapHeaderForm()
+    {
+        return $this->outputHeaders['Form'];
+    }
+
+    /**
+     * @return \NOUTSoap\StructType\Element
+     */
+    public function getSoapHeaderElement()
+    {
+        return $this->outputHeaders['Element'];
+    }
+
+    /**
+     * @return \NOUTSoap\StructType\Count
+     */
+    public function getSoapHeaderCount()
+    {
+        return $this->outputHeaders['Count'];
+    }
+
+    /**
+     * @return \NOUTSoap\StructType\ValidateError
+     */
+    public function getSoapHeaderValidateError()
+    {
+        return $this->outputHeaders['ValidateError'];
+    }
+
+    /**
+     * @return integer
+     */
+    public function getSoapHeaderNextCall()
+    {
+        return $this->outputHeaders['NextCall'];
+    }
+
+    /**
+     * @return integer
+     */
+    public function getSoapHeaderPJSizeCheck()
+    {
+        return $this->outputHeaders['PJSizeCheck'];
+    }
+
+    /**
+     * @return \NOUTSoap\StructType\RecipientCheck
+     */
+    public function getSoapHeaderRecipientCheck()
+    {
+        return $this->outputHeaders['RecipientCheck'];
+    }
+
+    /**
+     * @return string
+     */
+    public function getSoapHeaderCustomerInfos()
+    {
+        return $this->outputHeaders['CustomerInfos'];
+    }
+
+    /**
+     * @return string
+     */
+    public function getSoapHeaderSessionLanguageCode()
+    {
+        return $this->outputHeaders['SessionLanguageCode'];
+    }
+
+
     /**
      * Sets the APIUUID SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
@@ -141,7 +281,7 @@ class Service extends AbstractSoapClientBase
      * @param string $actor
      * @return bool
      */
-    public function setSoapHeaderAutoValidate(\NOUTSoap\StructType\AutoValidate $autoValidate=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderAutoValidate($autoValidate=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
         return $this->setSoapHeader($nameSpace, 'AutoValidate', $autoValidate, $mustUnderstand, $actor);
     }

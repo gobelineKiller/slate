@@ -94,7 +94,7 @@ abstract class AbstractSoapClientBase implements SoapClientInterface
      * @param array $aparameters
      * @return mixed
      */
-    protected function __soapCall($functionName, array $aparameters)
+    protected function __soapCall($functionName, $aparameters)
     {
         return self::getSoapClient()->__soapCall($functionName, $aparameters, null, null, $this->outputHeaders);
     }

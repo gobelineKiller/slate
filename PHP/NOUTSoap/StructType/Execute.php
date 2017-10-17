@@ -55,6 +55,13 @@ class Execute extends AbstractStructBase
      */
     public $CallingInfo;
     /**
+     * The BtnListMode
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var int
+     */
+    public $BtnListMode;
+    /**
      * Constructor method for Execute
      * @uses Execute::setID()
      * @uses Execute::setSentence()
@@ -64,6 +71,7 @@ class Execute extends AbstractStructBase
      * @uses Execute::setDisplayMode()
      * @uses Execute::setCallingColumn()
      * @uses Execute::setCallingInfo()
+     * @uses Execute::setBtnListMode()
      * @param string $iD
      * @param string $sentence
      * @param string $paramXML
@@ -72,8 +80,9 @@ class Execute extends AbstractStructBase
      * @param string $displayMode
      * @param string $callingColumn
      * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
+     * @param int $btnListMode
      */
-    public function __construct($iD = null, $sentence = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $checksum = null, $displayMode = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null)
+    public function __construct($iD = null, $sentence = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $checksum = null, $displayMode = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null, $btnListMode = null)
     {
         $this
             ->setID($iD)
@@ -83,7 +92,8 @@ class Execute extends AbstractStructBase
             ->setChecksum($checksum)
             ->setDisplayMode($displayMode)
             ->setCallingColumn($callingColumn)
-            ->setCallingInfo($callingInfo);
+            ->setCallingInfo($callingInfo)
+            ->setBtnListMode($btnListMode);
     }
     /**
      * Get ID value
@@ -254,6 +264,28 @@ class Execute extends AbstractStructBase
     public function setCallingInfo(\NOUTSoap\StructType\CallingInfoType $callingInfo = null)
     {
         $this->CallingInfo = $callingInfo;
+        return $this;
+    }
+    /**
+     * Get BtnListMode value
+     * @return int|null
+     */
+    public function getBtnListMode()
+    {
+        return $this->BtnListMode;
+    }
+    /**
+     * Set BtnListMode value
+     * @param int $btnListMode
+     * @return \NOUTSoap\StructType\Execute
+     */
+    public function setBtnListMode($btnListMode = null)
+    {
+        // validation for constraint: int
+        if (!is_null($btnListMode) && !is_numeric($btnListMode)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($btnListMode)), __LINE__);
+        }
+        $this->BtnListMode = $btnListMode;
         return $this;
     }
     /**

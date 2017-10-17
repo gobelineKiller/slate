@@ -180,6 +180,19 @@ class Service extends AbstractSoapClientBase
         return $this->outputHeaders['SessionLanguageCode'];
     }
 
+    /**
+     * Sets the DisplayMode SoapHeader param
+     * @uses AbstractSoapClientBase::setSoapHeader()
+     * @param \NOUTSoap\EnumType\DisplayModeReturnEnum $displayMode
+     * @param string $nameSpace
+     * @param bool $mustUnderstand
+     * @param string $actor
+     * @return bool
+     */
+    public function setSoapHeaderDisplayMode(\NOUTSoap\EnumType\DisplayModeReturnEnum $displayMode, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
+    {
+        return $this->setSoapHeader($nameSpace, 'DisplayMode', $displayMode, $mustUnderstand, $actor);
+    }
 
     /**
      * Sets the APIUUID SoapHeader param

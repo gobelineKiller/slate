@@ -855,6 +855,31 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
+     * Method to call the operation originally named GetEndListCalculation
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param GetEndListCalculation $getEndListCalculation
+     * @return \NOUTSoap\StructType\GetEndListCalculationResponse|bool
+     */
+    public function GetEndListCalculation($getEndListCalculation)
+    {
+        try {
+            $this->setResult(self::_getSoapClient()->GetEndListCalculation($getEndListCalculation));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
      * Method to call the operation originally named GetChart
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue

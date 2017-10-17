@@ -90,6 +90,7 @@ class ClassMap
             'ColListType' => '\\NOUTSoap\\StructType\\ColListType',
             'GetCalculation' => '\\NOUTSoap\\StructType\\GetCalculation',
             'GetCalculationResponse' => '\\NOUTSoap\\StructType\\GetCalculationResponse',
+            'GetEndListCalculationResponse' => '\\NOUTSoap\\StructType\\GetEndListCalculationResponse',
             'Search' => '\\NOUTSoap\\StructType\\Search',
             'SearchResponse' => '\\NOUTSoap\\StructType\\SearchResponse',
             'Request' => '\\NOUTSoap\\StructType\\Request',

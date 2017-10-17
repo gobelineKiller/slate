@@ -59,6 +59,8 @@ class ClassMap
             'CallingInfoType' => '\\NOUTSoap\\StructType\\CallingInfoType',
             'Execute' => '\\NOUTSoap\\StructType\\Execute',
             'ExecuteResponse' => '\\NOUTSoap\\StructType\\ExecuteResponse',
+            'GetSubListContent' => '\\NOUTSoap\\StructType\\GetSubListContent',
+            'GetSubListContentResponse' => '\\NOUTSoap\\StructType\\GetSubListContentResponse',
             'DrillThrough' => '\\NOUTSoap\\StructType\\DrillThrough',
             'DrillThroughResponse' => '\\NOUTSoap\\StructType\\DrillThroughResponse',
             'ButtonAction' => '\\NOUTSoap\\StructType\\ButtonAction',

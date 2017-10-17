@@ -320,7 +320,7 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\ButtonAction $parameters
+     * @param \NOUTSoap\StructType\ButtonAction $gparameters
      * @return \NOUTSoap\StructType\ButtonActionResponse|bool
      */
     public function ButtonAction(\NOUTSoap\StructType\ButtonAction $parameters)
@@ -898,6 +898,31 @@ class Service extends AbstractSoapClientBase
     {
         try {
             $this->setResult($this->__soapCall('GetColInRecord', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetSubListContent
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetSubListContent $parameters
+     * @return \NOUTSoap\StructType\GetSubListContentResponse|bool
+     */
+    public function GetSubListContent(\NOUTSoap\StructType\GetSubListContent $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetSubListContent', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

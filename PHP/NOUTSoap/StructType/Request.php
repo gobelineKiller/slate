@@ -17,7 +17,7 @@ class Request extends AbstractStructBase
     public $Table;
     /**
      * The CallingColumn
-     * @var string
+     * @var \NOUTSoap\StructType\CallingColumnType
      */
     public $CallingColumn;
     /**
@@ -61,7 +61,7 @@ class Request extends AbstractStructBase
      * @uses Request::setSort2()
      * @uses Request::setSort3()
      * @param string $table
-     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      * @param \NOUTSoap\StructType\ColListType $colList
      * @param string $condList
      * @param int $maxResult
@@ -69,7 +69,7 @@ class Request extends AbstractStructBase
      * @param \NOUTSoap\StructType\SortType $sort2
      * @param \NOUTSoap\StructType\SortType $sort3
      */
-    public function __construct($table = null, $callingColumn = null, \NOUTSoap\StructType\ColListType $colList = null, $condList = null, $maxResult = null, \NOUTSoap\StructType\SortType $sort1 = null, \NOUTSoap\StructType\SortType $sort2 = null, \NOUTSoap\StructType\SortType $sort3 = null)
+    public function __construct($table = null, \NOUTSoap\StructType\CallingColumnType $callingColumn = null, \NOUTSoap\StructType\ColListType $colList = null, $condList = null, $maxResult = null, \NOUTSoap\StructType\SortType $sort1 = null, \NOUTSoap\StructType\SortType $sort2 = null, \NOUTSoap\StructType\SortType $sort3 = null)
     {
         $this
             ->setTable($table)
@@ -105,7 +105,7 @@ class Request extends AbstractStructBase
     }
     /**
      * Get CallingColumn value
-     * @return string|null
+     * @return \NOUTSoap\StructType\CallingColumnType|null
      */
     public function getCallingColumn()
     {
@@ -113,15 +113,11 @@ class Request extends AbstractStructBase
     }
     /**
      * Set CallingColumn value
-     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      * @return \NOUTSoap\StructType\Request
      */
-    public function setCallingColumn($callingColumn = null)
+    public function setCallingColumn(\NOUTSoap\StructType\CallingColumnType $callingColumn = null)
     {
-        // validation for constraint: string
-        if (!is_null($callingColumn) && !is_string($callingColumn)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
-        }
         $this->CallingColumn = $callingColumn;
         return $this;
     }

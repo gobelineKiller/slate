@@ -17,7 +17,7 @@ class RequestParam extends AbstractStructBase
     public $Table;
     /**
      * The CallingColumn
-     * @var string
+     * @var \NOUTSoap\StructType\CallingColumnType
      */
     public $CallingColumn;
     /**
@@ -43,12 +43,12 @@ class RequestParam extends AbstractStructBase
      * @uses RequestParam::setCondList()
      * @uses RequestParam::setMaxResult()
      * @param string $table
-     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      * @param \NOUTSoap\StructType\ColListType $colList
      * @param string $condList
      * @param int $maxResult
      */
-    public function __construct($table = null, $callingColumn = null, \NOUTSoap\StructType\ColListType $colList = null, $condList = null, $maxResult = null)
+    public function __construct($table = null, \NOUTSoap\StructType\CallingColumnType $callingColumn = null, \NOUTSoap\StructType\ColListType $colList = null, $condList = null, $maxResult = null)
     {
         $this
             ->setTable($table)
@@ -81,7 +81,7 @@ class RequestParam extends AbstractStructBase
     }
     /**
      * Get CallingColumn value
-     * @return string|null
+     * @return \NOUTSoap\StructType\CallingColumnType|null
      */
     public function getCallingColumn()
     {
@@ -89,15 +89,11 @@ class RequestParam extends AbstractStructBase
     }
     /**
      * Set CallingColumn value
-     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      * @return \NOUTSoap\StructType\RequestParam
      */
-    public function setCallingColumn($callingColumn = null)
+    public function setCallingColumn(\NOUTSoap\StructType\CallingColumnType $callingColumn = null)
     {
-        // validation for constraint: string
-        if (!is_null($callingColumn) && !is_string($callingColumn)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
-        }
         $this->CallingColumn = $callingColumn;
         return $this;
     }

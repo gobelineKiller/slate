@@ -27,7 +27,7 @@ class _List extends AbstractStructBase
     public $SpecialParamList;
     /**
      * The CallingColumn
-     * @var string
+     * @var \NOUTSoap\StructType\CallingColumnType
      */
     public $CallingColumn;
     /**
@@ -57,12 +57,12 @@ class _List extends AbstractStructBase
      * @param string $table
      * @param string $paramXML
      * @param \NOUTSoap\StructType\SpecialParamListType $specialParamList
-     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      * @param int $noCache
      * @param int $checksum
      * @param string $displayMode
      */
-    public function __construct($table = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $callingColumn = null, $noCache = null, $checksum = null, $displayMode = null)
+    public function __construct($table = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, \NOUTSoap\StructType\CallingColumnType $callingColumn = null, $noCache = null, $checksum = null, $displayMode = null)
     {
         $this
             ->setTable($table)
@@ -137,7 +137,7 @@ class _List extends AbstractStructBase
     }
     /**
      * Get CallingColumn value
-     * @return string|null
+     * @return \NOUTSoap\StructType\CallingColumnType|null
      */
     public function getCallingColumn()
     {
@@ -145,15 +145,11 @@ class _List extends AbstractStructBase
     }
     /**
      * Set CallingColumn value
-     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      * @return \NOUTSoap\StructType\_List
      */
-    public function setCallingColumn($callingColumn = null)
+    public function setCallingColumn(\NOUTSoap\StructType\CallingColumnType $callingColumn = null)
     {
-        // validation for constraint: string
-        if (!is_null($callingColumn) && !is_string($callingColumn)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
-        }
         $this->CallingColumn = $callingColumn;
         return $this;
     }

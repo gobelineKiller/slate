@@ -27,7 +27,7 @@ class Create extends AbstractStructBase
     public $IDMessage;
     /**
      * The CallingColumn
-     * @var string
+     * @var \NOUTSoap\StructType\CallingColumnType
      */
     public $CallingColumn;
     /**
@@ -39,9 +39,9 @@ class Create extends AbstractStructBase
      * @param string $table
      * @param string $paramXML
      * @param string $iDMessage
-     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      */
-    public function __construct($table = null, $paramXML = null, $iDMessage = null, $callingColumn = null)
+    public function __construct($table = null, $paramXML = null, $iDMessage = null, \NOUTSoap\StructType\CallingColumnType $callingColumn = null)
     {
         $this
             ->setTable($table)
@@ -117,7 +117,7 @@ class Create extends AbstractStructBase
     }
     /**
      * Get CallingColumn value
-     * @return string|null
+     * @return \NOUTSoap\StructType\CallingColumnType|null
      */
     public function getCallingColumn()
     {
@@ -125,15 +125,11 @@ class Create extends AbstractStructBase
     }
     /**
      * Set CallingColumn value
-     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      * @return \NOUTSoap\StructType\Create
      */
-    public function setCallingColumn($callingColumn = null)
+    public function setCallingColumn(\NOUTSoap\StructType\CallingColumnType $callingColumn = null)
     {
-        // validation for constraint: string
-        if (!is_null($callingColumn) && !is_string($callingColumn)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
-        }
         $this->CallingColumn = $callingColumn;
         return $this;
     }

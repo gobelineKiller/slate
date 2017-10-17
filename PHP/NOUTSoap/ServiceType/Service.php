@@ -1506,6 +1506,32 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
+     * Method to call the operation originally named AutoComplete
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
+     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\AutoComplete $parameters
+     * @return \NOUTSoap\StructType\AutoCompleteResponse|bool
+     */
+    public function AutoComplete(\NOUTSoap\StructType\AutoComplete $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('AutoComplete', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
      * Method to call the operation originally named ResetPasswordFailed
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, CustomerInfos

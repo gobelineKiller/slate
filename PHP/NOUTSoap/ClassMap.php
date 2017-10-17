@@ -34,6 +34,8 @@ class ClassMap
             'SelectFormResponse' => '\\NOUTSoap\\StructType\\SelectFormResponse',
             'SelectPrintTemplate' => '\\NOUTSoap\\StructType\\SelectPrintTemplate',
             'SelectPrintTemplateResponse' => '\\NOUTSoap\\StructType\\SelectPrintTemplateResponse',
+            'SelectChoice' => '\\NOUTSoap\\StructType\\SelectChoice',
+            'SelectChoiceResponse' => '\\NOUTSoap\\StructType\\SelectChoiceResponse',
             'GetPlanningInfo' => '\\NOUTSoap\\StructType\\GetPlanningInfo',
             'GetPlanningInfoResponse' => '\\NOUTSoap\\StructType\\GetPlanningInfoResponse',
             'GetColInRecord' => '\\NOUTSoap\\StructType\\GetColInRecord',

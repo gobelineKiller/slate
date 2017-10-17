@@ -119,6 +119,16 @@ class ReturnType
      */
     const VALUE_CHART = 'Chart';
     /**
+     * Constant for value 'Choice'
+     * @return string 'Choice'
+     */
+    const VALUE_CHOICE = 'Choice';
+    /**
+     * Constant for value 'Scheduler'
+     * @return string 'Scheduler'
+     */
+    const VALUE_SCHEDULER = 'Scheduler';
+    /**
      * Return true if value is allowed
      * @uses self::getValidValues()
      * @param mixed $value value
@@ -152,6 +162,8 @@ class ReturnType
      * @uses self::VALUE_VALIDATE_RECORD
      * @uses self::VALUE_WITH_AUTOMATIC_RESPONSE
      * @uses self::VALUE_CHART
+     * @uses self::VALUE_CHOICE
+     * @uses self::VALUE_SCHEDULER
      * @return string[]
      */
     public static function getValidValues()
@@ -179,6 +191,8 @@ class ReturnType
             self::VALUE_VALIDATE_RECORD,
             self::VALUE_WITH_AUTOMATIC_RESPONSE,
             self::VALUE_CHART,
+            self::VALUE_CHOICE,
+            self::VALUE_SCHEDULER,
         );
     }
     /**

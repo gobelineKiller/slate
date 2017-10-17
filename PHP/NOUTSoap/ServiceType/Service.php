@@ -1655,6 +1655,56 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
+     * Method to call the operation originally named SetOrderList
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\SetOrderList $parameters
+     * @return \NOUTSoap\StructType\SetOrderListResponse|bool
+     */
+    public function SetOrderList(\NOUTSoap\StructType\SetOrderList $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('SetOrderList', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named SetOrderSubList
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\SetOrderSubList $parameters
+     * @return \NOUTSoap\StructType\SetOrderSubListResponse|bool
+     */
+    public function SetOrderSubList(\NOUTSoap\StructType\SetOrderSubList $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('SetOrderSubList', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
      * Method to call the operation originally named TransformInto
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate

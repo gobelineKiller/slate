@@ -36,26 +36,50 @@ class Request extends AbstractStructBase
      */
     public $MaxResult;
     /**
+     * The Sort1
+     * @var \NOUTSoap\StructType\SortType
+     */
+    public $Sort1;
+    /**
+     * The Sort2
+     * @var \NOUTSoap\StructType\SortType
+     */
+    public $Sort2;
+    /**
+     * The Sort3
+     * @var \NOUTSoap\StructType\SortType
+     */
+    public $Sort3;
+    /**
      * Constructor method for Request
      * @uses Request::setTable()
      * @uses Request::setCallingColumn()
      * @uses Request::setColList()
      * @uses Request::setCondList()
      * @uses Request::setMaxResult()
+     * @uses Request::setSort1()
+     * @uses Request::setSort2()
+     * @uses Request::setSort3()
      * @param string $table
      * @param string $callingColumn
      * @param \NOUTSoap\StructType\ColListType $colList
      * @param string $condList
      * @param int $maxResult
+     * @param \NOUTSoap\StructType\SortType $sort1
+     * @param \NOUTSoap\StructType\SortType $sort2
+     * @param \NOUTSoap\StructType\SortType $sort3
      */
-    public function __construct($table = null, $callingColumn = null, \NOUTSoap\StructType\ColListType $colList = null, $condList = null, $maxResult = null)
+    public function __construct($table = null, $callingColumn = null, \NOUTSoap\StructType\ColListType $colList = null, $condList = null, $maxResult = null, \NOUTSoap\StructType\SortType $sort1 = null, \NOUTSoap\StructType\SortType $sort2 = null, \NOUTSoap\StructType\SortType $sort3 = null)
     {
         $this
             ->setTable($table)
             ->setCallingColumn($callingColumn)
             ->setColList($colList)
             ->setCondList($condList)
-            ->setMaxResult($maxResult);
+            ->setMaxResult($maxResult)
+            ->setSort1($sort1)
+            ->setSort2($sort2)
+            ->setSort3($sort3);
     }
     /**
      * Get Table value
@@ -161,6 +185,60 @@ class Request extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($maxResult)), __LINE__);
         }
         $this->MaxResult = $maxResult;
+        return $this;
+    }
+    /**
+     * Get Sort1 value
+     * @return \NOUTSoap\StructType\SortType|null
+     */
+    public function getSort1()
+    {
+        return $this->Sort1;
+    }
+    /**
+     * Set Sort1 value
+     * @param \NOUTSoap\StructType\SortType $sort1
+     * @return \NOUTSoap\StructType\Request
+     */
+    public function setSort1(\NOUTSoap\StructType\SortType $sort1 = null)
+    {
+        $this->Sort1 = $sort1;
+        return $this;
+    }
+    /**
+     * Get Sort2 value
+     * @return \NOUTSoap\StructType\SortType|null
+     */
+    public function getSort2()
+    {
+        return $this->Sort2;
+    }
+    /**
+     * Set Sort2 value
+     * @param \NOUTSoap\StructType\SortType $sort2
+     * @return \NOUTSoap\StructType\Request
+     */
+    public function setSort2(\NOUTSoap\StructType\SortType $sort2 = null)
+    {
+        $this->Sort2 = $sort2;
+        return $this;
+    }
+    /**
+     * Get Sort3 value
+     * @return \NOUTSoap\StructType\SortType|null
+     */
+    public function getSort3()
+    {
+        return $this->Sort3;
+    }
+    /**
+     * Set Sort3 value
+     * @param \NOUTSoap\StructType\SortType $sort3
+     * @return \NOUTSoap\StructType\Request
+     */
+    public function setSort3(\NOUTSoap\StructType\SortType $sort3 = null)
+    {
+        $this->Sort3 = $sort3;
         return $this;
     }
     /**

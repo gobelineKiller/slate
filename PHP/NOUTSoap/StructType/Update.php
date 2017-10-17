@@ -31,23 +31,33 @@ class Update extends AbstractStructBase
      */
     public $UpdateData;
     /**
+     * The AssistantMode
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
+     */
+    public $AssistantMode;
+    /**
      * Constructor method for Update
      * @uses Update::setTable()
      * @uses Update::setParamXML()
      * @uses Update::setComplete()
      * @uses Update::setUpdateData()
+     * @uses Update::setAssistantMode()
      * @param string $table
      * @param string $paramXML
      * @param int $complete
      * @param string $updateData
+     * @param string $assistantMode
      */
-    public function __construct($table = null, $paramXML = null, $complete = null, $updateData = null)
+    public function __construct($table = null, $paramXML = null, $complete = null, $updateData = null, $assistantMode = null)
     {
         $this
             ->setTable($table)
             ->setParamXML($paramXML)
             ->setComplete($complete)
-            ->setUpdateData($updateData);
+            ->setUpdateData($updateData)
+            ->setAssistantMode($assistantMode);
     }
     /**
      * Get Table value
@@ -135,6 +145,28 @@ class Update extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($updateData)), __LINE__);
         }
         $this->UpdateData = $updateData;
+        return $this;
+    }
+    /**
+     * Get AssistantMode value
+     * @return string|null
+     */
+    public function getAssistantMode()
+    {
+        return $this->AssistantMode;
+    }
+    /**
+     * Set AssistantMode value
+     * @param string $assistantMode
+     * @return \NOUTSoap\StructType\Update
+     */
+    public function setAssistantMode($assistantMode = null)
+    {
+        // validation for constraint: string
+        if (!is_null($assistantMode) && !is_string($assistantMode)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($assistantMode)), __LINE__);
+        }
+        $this->AssistantMode = $assistantMode;
         return $this;
     }
     /**

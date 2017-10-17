@@ -21,17 +21,27 @@ class Modify extends AbstractStructBase
      */
     public $ParamXML;
     /**
+     * The UpdateData
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
+     */
+    public $UpdateData;
+    /**
      * Constructor method for Modify
      * @uses Modify::setTable()
      * @uses Modify::setParamXML()
+     * @uses Modify::setUpdateData()
      * @param string $table
      * @param string $paramXML
+     * @param string $updateData
      */
-    public function __construct($table = null, $paramXML = null)
+    public function __construct($table = null, $paramXML = null, $updateData = null)
     {
         $this
             ->setTable($table)
-            ->setParamXML($paramXML);
+            ->setParamXML($paramXML)
+            ->setUpdateData($updateData);
     }
     /**
      * Get Table value
@@ -75,6 +85,28 @@ class Modify extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paramXML)), __LINE__);
         }
         $this->ParamXML = $paramXML;
+        return $this;
+    }
+    /**
+     * Get UpdateData value
+     * @return string|null
+     */
+    public function getUpdateData()
+    {
+        return $this->UpdateData;
+    }
+    /**
+     * Set UpdateData value
+     * @param string $updateData
+     * @return \NOUTSoap\StructType\Modify
+     */
+    public function setUpdateData($updateData = null)
+    {
+        // validation for constraint: string
+        if (!is_null($updateData) && !is_string($updateData)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($updateData)), __LINE__);
+        }
+        $this->UpdateData = $updateData;
         return $this;
     }
     /**

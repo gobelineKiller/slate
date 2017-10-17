@@ -181,20 +181,6 @@ class Service extends AbstractSoapClientBase
     }
 
     /**
-     * Sets the DisplayMode SoapHeader param
-     * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \NOUTSoap\EnumType\DisplayModeReturnEnum $displayMode
-     * @param string $nameSpace
-     * @param bool $mustUnderstand
-     * @param string $actor
-     * @return bool
-     */
-    public function setSoapHeaderDisplayMode(\NOUTSoap\EnumType\DisplayModeReturnEnum $displayMode, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
-    {
-        return $this->setSoapHeader($nameSpace, 'DisplayMode', $displayMode, $mustUnderstand, $actor);
-    }
-
-    /**
      * Sets the APIUUID SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \NOUTSoap\StructType\APIUUID $aPIUUID
@@ -206,32 +192,6 @@ class Service extends AbstractSoapClientBase
     public function setSoapHeaderAPIUUID(\NOUTSoap\StructType\APIUUID $aPIUUID=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
         return $this->setSoapHeader($nameSpace, 'APIUUID', $aPIUUID, $mustUnderstand, $actor);
-    }
-    /**
-     * Sets the CustomerInfos SoapHeader param
-     * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \NOUTSoap\StructType\CustomerInfos $customerInfos
-     * @param string $nameSpace
-     * @param bool $mustUnderstand
-     * @param string $actor
-     * @return bool
-     */
-    public function setSoapHeaderCustomerInfos(\NOUTSoap\StructType\CustomerInfos $customerInfos=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
-    {
-        return $this->setSoapHeader($nameSpace, 'CustomerInfos', $customerInfos, $mustUnderstand, $actor);
-    }
-    /**
-     * Sets the OptionDialogue SoapHeader param
-     * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \NOUTSoap\StructType\OptionDialogue $optionDialogue
-     * @param string $nameSpace
-     * @param bool $mustUnderstand
-     * @param string $actor
-     * @return bool
-     */
-    public function setSoapHeaderOptionDialogue(\NOUTSoap\StructType\OptionDialogue $optionDialogue, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
-    {
-        return $this->setSoapHeader($nameSpace, 'OptionDialogue', $optionDialogue, $mustUnderstand, $actor);
     }
     /**
      * Sets the UsernameToken SoapHeader param
@@ -258,6 +218,32 @@ class Service extends AbstractSoapClientBase
     public function setSoapHeaderSessionToken($sessionToken, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
         return $this->setSoapHeader($nameSpace, 'SessionToken', $sessionToken, $mustUnderstand, $actor);
+    }
+    /**
+     * Sets the CustomerInfos SoapHeader param
+     * @uses AbstractSoapClientBase::setSoapHeader()
+     * @param \NOUTSoap\StructType\CustomerInfos $customerInfos
+     * @param string $nameSpace
+     * @param bool $mustUnderstand
+     * @param string $actor
+     * @return bool
+     */
+    public function setSoapHeaderCustomerInfos(\NOUTSoap\StructType\CustomerInfos $customerInfos=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
+    {
+        return $this->setSoapHeader($nameSpace, 'CustomerInfos', $customerInfos, $mustUnderstand, $actor);
+    }
+    /**
+     * Sets the OptionDialogue SoapHeader param
+     * @uses AbstractSoapClientBase::setSoapHeader()
+     * @param \NOUTSoap\StructType\OptionDialogue $optionDialogue
+     * @param string $nameSpace
+     * @param bool $mustUnderstand
+     * @param string $actor
+     * @return bool
+     */
+    public function setSoapHeaderOptionDialogue(\NOUTSoap\StructType\OptionDialogue $optionDialogue, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
+    {
+        return $this->setSoapHeader($nameSpace, 'OptionDialogue', $optionDialogue, $mustUnderstand, $actor);
     }
     /**
      * Sets the APIUser SoapHeader param
@@ -299,23 +285,23 @@ class Service extends AbstractSoapClientBase
         return $this->setSoapHeader($nameSpace, 'AutoValidate', $autoValidate, $mustUnderstand, $actor);
     }
     /**
-     * Method to call the operation originally named GetLanguages
+     * Method to call the operation originally named AddPJ
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, optional, optional
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param GetLanguages $getLanguages
-     * @return \NOUTSoap\StructType\GetLanguagesResponse|bool
+     * @param \NOUTSoap\StructType\AddPJ $parameters
+     * @return \NOUTSoap\StructType\AddPJResponse|bool
      */
-    public function GetLanguages($getLanguages)
+    public function AddPJ(\NOUTSoap\StructType\AddPJ $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetLanguages($getLanguages));
+            $this->setResult($this->__soapCall('AddPJ', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -323,72 +309,168 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named GetTokenSession
+     * Method to call the operation originally named Cancel
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetTokenSession $parameters
-     * @return \NOUTSoap\StructType\GetTokenSessionResponse|bool
-     */
-    public function GetTokenSession(\NOUTSoap\StructType\GetTokenSession $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('GetTokenSession', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named ResetPasswordFailed
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, CustomerInfos
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\CustomerInfos
-     * - SOAPHeaders : optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\ResetPasswordFailed $parameters
-     * @return \NOUTSoap\StructType\ResetPasswordFailedResponse|bool
-     */
-    public function ResetPasswordFailed(\NOUTSoap\StructType\ResetPasswordFailed $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('ResetPasswordFailed', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named GetStartAutomatism
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetStartAutomatism $parameters
-     * @return \NOUTSoap\StructType\GetStartAutomatismResponse|bool
+     * @param \NOUTSoap\StructType\Cancel $parameters
+     * @return \NOUTSoap\StructType\CancelResponse|bool
      */
-    public function GetStartAutomatism(\NOUTSoap\StructType\GetStartAutomatism $parameters)
+    public function Cancel(\NOUTSoap\StructType\Cancel $parameters)
     {
         try {
-            $this->setResult($this->__soapCall('GetStartAutomatism', $parameters));
+            $this->setResult($this->__soapCall('Cancel', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named CancelFolder
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\CancelFolder $parameters
+     * @return CancelFolderResponse|bool
+     */
+    public function CancelFolder(\NOUTSoap\StructType\CancelFolder $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('CancelFolder', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named CancelMessage
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\CancelMessage $parameters
+     * @return CancelMessageResponse|bool
+     */
+    public function CancelMessage(\NOUTSoap\StructType\CancelMessage $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('CancelMessage', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named CheckCreateElement
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\CheckCreateElement $parameters
+     * @return \NOUTSoap\StructType\CheckCreateElementResponse|bool
+     */
+    public function CheckCreateElement(\NOUTSoap\StructType\CheckCreateElement $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('CheckCreateElement', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named CheckRecipient
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\CheckRecipient $parameters
+     * @return \NOUTSoap\StructType\CheckRecipientResponse|bool
+     */
+    public function CheckRecipient(\NOUTSoap\StructType\CheckRecipient $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('CheckRecipient', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named CloseFolderList
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\CloseFolderList $parameters
+     * @return CloseFolderListResponse|bool
+     */
+    public function CloseFolderList(\NOUTSoap\StructType\CloseFolderList $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('CloseFolderList', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named CloseMessageList
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\CloseMessageList $parameters
+     * @return CloseMessageListResponse|bool
+     */
+    public function CloseMessageList(\NOUTSoap\StructType\CloseMessageList $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('CloseMessageList', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -414,157 +496,6 @@ class Service extends AbstractSoapClientBase
     {
         try {
             $this->setResult($this->__soapCall('ConfirmResponse', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named HasChanged
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param HasChanged $hasChanged
-     * @return \NOUTSoap\StructType\HasChangedResponse|bool
-     */
-    public function HasChanged($hasChanged)
-    {
-        try {
-            $this->setResult(self::_getSoapClient()->HasChanged($hasChanged));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named SelectForm
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\SelectForm $parameters
-     * @return \NOUTSoap\StructType\SelectFormResponse|bool
-     */
-    public function SelectForm(\NOUTSoap\StructType\SelectForm $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('SelectForm', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named SelectPrintTemplate
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\SelectPrintTemplate $parameters
-     * @return \NOUTSoap\StructType\SelectPrintTemplateResponse|bool
-     */
-    public function SelectPrintTemplate(\NOUTSoap\StructType\SelectPrintTemplate $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('SelectPrintTemplate', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named GetPlanningInfo
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetPlanningInfo $parameters
-     * @return \NOUTSoap\StructType\GetPlanningInfoResponse|bool
-     */
-    public function GetPlanningInfo(\NOUTSoap\StructType\GetPlanningInfo $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('GetPlanningInfo', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named GetColInRecord
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetColInRecord $parameters
-     * @return \NOUTSoap\StructType\GetColInRecordResponse|bool
-     */
-    public function GetColInRecord(\NOUTSoap\StructType\GetColInRecord $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('GetColInRecord', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named Display
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\Display $parameters
-     * @return \NOUTSoap\StructType\DisplayResponse|bool
-     */
-    public function Display(\NOUTSoap\StructType\Display $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('Display', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -598,6 +529,31 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
+     * Method to call the operation originally named CreateFolder
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param CreateFolder $createFolder
+     * @return \NOUTSoap\StructType\CreateFolderResponse|bool
+     */
+    public function CreateFolder($createFolder)
+    {
+        try {
+            $this->setResult(self::_getSoapClient()->CreateFolder($createFolder));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
      * Method to call the operation originally named CreateFrom
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
@@ -624,103 +580,24 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named TransformInto
+     * Method to call the operation originally named CreateMessage
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\TransformInto $parameters
-     * @return \NOUTSoap\StructType\TransformIntoResponse|bool
+     * @param \NOUTSoap\StructType\CreateMessage $parameters
+     * @return \NOUTSoap\StructType\CreateMessageResponse|bool
      */
-    public function TransformInto(\NOUTSoap\StructType\TransformInto $parameters)
+    public function CreateMessage(\NOUTSoap\StructType\CreateMessage $parameters)
     {
         try {
-            $this->setResult($this->__soapCall('TransformInto', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named Modify
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\Modify $parameters
-     * @return \NOUTSoap\StructType\ModifyResponse|bool
-     */
-    public function Modify(\NOUTSoap\StructType\Modify $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('Modify', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named Update
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\Update $parameters
-     * @return \NOUTSoap\StructType\UpdateResponse|bool
-     */
-    public function Update(\NOUTSoap\StructType\Update $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('Update', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named Print
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\_Print $parameters
-     * @return \NOUTSoap\StructType\PrintResponse|bool
-     */
-    public function _Print(\NOUTSoap\StructType\_Print $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('Print', $parameters));
+            $this->setResult($this->__soapCall('CreateMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -754,6 +631,154 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
+     * Method to call the operation originally named DeleteFolder
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\DeleteFolder $parameters
+     * @return DeleteFolderResponse|bool
+     */
+    public function DeleteFolder(\NOUTSoap\StructType\DeleteFolder $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('DeleteFolder', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named DeletePJ
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\DeletePJ $parameters
+     * @return \NOUTSoap\StructType\DeletePJResponse|bool
+     */
+    public function DeletePJ(\NOUTSoap\StructType\DeletePJ $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('DeletePJ', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named Disconnect
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param Disconnect $disconnect
+     * @return DisconnectResponse|bool
+     */
+    public function Disconnect($disconnect)
+    {
+        try {
+            $this->setResult(self::_getSoapClient()->Disconnect($disconnect));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named Display
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
+     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\Display $parameters
+     * @return \NOUTSoap\StructType\DisplayResponse|bool
+     */
+    public function Display(\NOUTSoap\StructType\Display $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('Display', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named DrillThrough
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\DrillThrough $parameters
+     * @return \NOUTSoap\StructType\DrillThroughResponse|bool
+     */
+    public function DrillThrough(\NOUTSoap\StructType\DrillThrough $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('DrillThrough', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named EnterReorderListMode
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param EnterReorderListMode $enterReorderListMode
+     * @return \NOUTSoap\StructType\EnterReorderListModeResponse|bool
+     */
+    public function EnterReorderListMode($enterReorderListMode)
+    {
+        try {
+            $this->setResult($this->__soapCall('EnterReorderListMode', $enterReorderListMode));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
      * Method to call the operation originally named Execute
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
@@ -780,7 +805,7 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named Validate
+     * Method to call the operation originally named GetCalculation
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
@@ -791,13 +816,13 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param Validate $validate
-     * @return \NOUTSoap\StructType\ValidateResponse|bool
+     * @param \NOUTSoap\StructType\GetCalculation $parameters
+     * @return \NOUTSoap\StructType\GetCalculationResponse|bool
      */
-    public function Validate($validate)
+    public function GetCalculation(\NOUTSoap\StructType\GetCalculation $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Validate($validate));
+            $this->setResult($this->__soapCall('GetCalculation', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -805,7 +830,353 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named Cancel
+     * Method to call the operation originally named GetChart
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetChart $parameters
+     * @return \NOUTSoap\StructType\GetChartResponse|bool
+     */
+    public function GetChart(\NOUTSoap\StructType\GetChart $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetChart', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetColInRecord
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetColInRecord $parameters
+     * @return \NOUTSoap\StructType\GetColInRecordResponse|bool
+     */
+    public function GetColInRecord(\NOUTSoap\StructType\GetColInRecord $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetColInRecord', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetContentFolder
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetContentFolder $parameters
+     * @return \NOUTSoap\StructType\GetContentFolderResponse|bool
+     */
+    public function GetContentFolder(\NOUTSoap\StructType\GetContentFolder $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetContentFolder', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetEndAutomatism
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetEndAutomatism $parameters
+     * @return \NOUTSoap\StructType\GetEndAutomatismResponse|bool
+     */
+    public function GetEndAutomatism(\NOUTSoap\StructType\GetEndAutomatism $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetEndAutomatism', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetFolderList
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param GetFolderList $getFolderList
+     * @return \NOUTSoap\StructType\GetFolderListResponse|bool
+     */
+    public function GetFolderList($getFolderList)
+    {
+        try {
+            $this->setResult(self::_getSoapClient()->GetFolderList($getFolderList));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetLanguages
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param GetLanguages $getLanguages
+     * @return \NOUTSoap\StructType\GetLanguagesResponse|bool
+     */
+    public function GetLanguages($getLanguages)
+    {
+        try {
+            $this->setResult(self::_getSoapClient()->GetLanguages($getLanguages));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetListMessage
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetListMessage $parameters
+     * @return \NOUTSoap\StructType\GetListMessageResponse|bool
+     */
+    public function GetListMessage(\NOUTSoap\StructType\GetListMessage $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetListMessage', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetMailServiceStatus
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param GetMailServiceStatus $getMailServiceStatus
+     * @return \NOUTSoap\StructType\GetMailServiceStatusResponse|bool
+     */
+    public function GetMailServiceStatus($getMailServiceStatus)
+    {
+        try {
+            $this->setResult(self::_getSoapClient()->GetMailServiceStatus($getMailServiceStatus));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetPJ
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetPJ $parameters
+     * @return \NOUTSoap\StructType\GetPJResponse|bool
+     */
+    public function GetPJ(\NOUTSoap\StructType\GetPJ $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetPJ', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetPlanningInfo
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetPlanningInfo $parameters
+     * @return \NOUTSoap\StructType\GetPlanningInfoResponse|bool
+     */
+    public function GetPlanningInfo(\NOUTSoap\StructType\GetPlanningInfo $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetPlanningInfo', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetStartAutomatism
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetStartAutomatism $parameters
+     * @return \NOUTSoap\StructType\GetStartAutomatismResponse|bool
+     */
+    public function GetStartAutomatism(\NOUTSoap\StructType\GetStartAutomatism $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetStartAutomatism', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetTableChild
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetTableChild $parameters
+     * @return \NOUTSoap\StructType\GetTableChildResponse|bool
+     */
+    public function GetTableChild(\NOUTSoap\StructType\GetTableChild $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetTableChild', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetTemporalAutomatism
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param GetTemporalAutomatism $getTemporalAutomatism
+     * @return \NOUTSoap\StructType\GetTemporalAutomatismResponse|bool
+     */
+    public function GetTemporalAutomatism($getTemporalAutomatism)
+    {
+        try {
+            $this->setResult(self::_getSoapClient()->GetTemporalAutomatism($getTemporalAutomatism));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named GetTokenSession
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\GetTokenSession $parameters
+     * @return \NOUTSoap\StructType\GetTokenSessionResponse|bool
+     */
+    public function GetTokenSession(\NOUTSoap\StructType\GetTokenSession $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('GetTokenSession', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named HasChanged
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
@@ -816,13 +1187,63 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\Cancel $parameters
-     * @return \NOUTSoap\StructType\CancelResponse|bool
+     * @param HasChanged $hasChanged
+     * @return \NOUTSoap\StructType\HasChangedResponse|bool
      */
-    public function Cancel(\NOUTSoap\StructType\Cancel $parameters)
+    public function HasChanged($hasChanged)
     {
         try {
-            $this->setResult($this->__soapCall('Cancel', $parameters));
+            $this->setResult(self::_getSoapClient()->HasChanged($hasChanged));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named InitRecordFromAddress
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, ActionContext, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\InitRecordFromAddress $parameters
+     * @return \NOUTSoap\StructType\InitRecordFromAddressResponse|bool
+     */
+    public function InitRecordFromAddress(\NOUTSoap\StructType\InitRecordFromAddress $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('InitRecordFromAddress', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named InitRecordFromMessage
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, ActionContext, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\InitRecordFromMessage $parameters
+     * @return \NOUTSoap\StructType\InitRecordFromMessageResponse|bool
+     */
+    public function InitRecordFromMessage(\NOUTSoap\StructType\InitRecordFromMessage $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('InitRecordFromMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -856,32 +1277,7 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named GetCalculation
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetCalculation $parameters
-     * @return \NOUTSoap\StructType\GetCalculationResponse|bool
-     */
-    public function GetCalculation(\NOUTSoap\StructType\GetCalculation $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('GetCalculation', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named Search
+     * Method to call the operation originally named Modify
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
@@ -893,13 +1289,139 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\Search $parameters
-     * @return \NOUTSoap\StructType\SearchResponse|bool
+     * @param \NOUTSoap\StructType\Modify $parameters
+     * @return \NOUTSoap\StructType\ModifyResponse|bool
      */
-    public function Search(\NOUTSoap\StructType\Search $parameters)
+    public function Modify(\NOUTSoap\StructType\Modify $parameters)
     {
         try {
-            $this->setResult($this->__soapCall('Search', $parameters));
+            $this->setResult($this->__soapCall('Modify', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named ModifyFolder
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\ModifyFolder $parameters
+     * @return \NOUTSoap\StructType\ModifyFolderResponse|bool
+     */
+    public function ModifyFolder(\NOUTSoap\StructType\ModifyFolder $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('ModifyFolder', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named ModifyMessage
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\ModifyMessage $parameters
+     * @return \NOUTSoap\StructType\ModifyMessageResponse|bool
+     */
+    public function ModifyMessage(\NOUTSoap\StructType\ModifyMessage $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('ModifyMessage', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named Print
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
+     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\_Print $parameters
+     * @return \NOUTSoap\StructType\PrintResponse|bool
+     */
+    public function _Print(\NOUTSoap\StructType\_Print $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('Print', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named ReorderList
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\ReorderList $parameters
+     * @return \NOUTSoap\StructType\ReorderListResponse|bool
+     */
+    public function ReorderList(\NOUTSoap\StructType\ReorderList $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('ReorderList', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named ReorderSubList
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\ReorderSubList $parameters
+     * @return \NOUTSoap\StructType\ReorderSubListResponse|bool
+     */
+    public function ReorderSubList(\NOUTSoap\StructType\ReorderSubList $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('ReorderSubList', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -933,6 +1455,31 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
+     * Method to call the operation originally named RequestMessage
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, ActionContext, CustomerInfos, OptionDialogue, AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\RequestMessage $parameters
+     * @return \NOUTSoap\StructType\RequestMessageResponse|bool
+     */
+    public function RequestMessage(\NOUTSoap\StructType\RequestMessage $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('RequestMessage', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
      * Method to call the operation originally named RequestParam
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
@@ -959,24 +1506,23 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named GetTemporalAutomatism
+     * Method to call the operation originally named ResetPasswordFailed
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * - SOAPHeaderNames : APIUUID, CustomerInfos
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\CustomerInfos
+     * - SOAPHeaders : optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param GetTemporalAutomatism $getTemporalAutomatism
-     * @return \NOUTSoap\StructType\GetTemporalAutomatismResponse|bool
+     * @param \NOUTSoap\StructType\ResetPasswordFailed $parameters
+     * @return \NOUTSoap\StructType\ResetPasswordFailedResponse|bool
      */
-    public function GetTemporalAutomatism($getTemporalAutomatism)
+    public function ResetPasswordFailed(\NOUTSoap\StructType\ResetPasswordFailed $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->GetTemporalAutomatism($getTemporalAutomatism));
+            $this->setResult($this->__soapCall('ResetPasswordFailed', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -984,24 +1530,25 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named GetEndAutomatism
+     * Method to call the operation originally named Search
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
+     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetEndAutomatism $parameters
-     * @return \NOUTSoap\StructType\GetEndAutomatismResponse|bool
+     * @param \NOUTSoap\StructType\Search $parameters
+     * @return \NOUTSoap\StructType\SearchResponse|bool
      */
-    public function GetEndAutomatism(\NOUTSoap\StructType\GetEndAutomatism $parameters)
+    public function Search(\NOUTSoap\StructType\Search $parameters)
     {
         try {
-            $this->setResult($this->__soapCall('GetEndAutomatism', $parameters));
+            $this->setResult($this->__soapCall('Search', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1009,7 +1556,82 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named Disconnect
+     * Method to call the operation originally named SelectForm
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\SelectForm $parameters
+     * @return \NOUTSoap\StructType\SelectFormResponse|bool
+     */
+    public function SelectForm(\NOUTSoap\StructType\SelectForm $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('SelectForm', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named SelectItems
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext
+     * - SOAPHeaders : optional, required, required, optional, optional, required
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\SelectItems $parameters
+     * @return \NOUTSoap\StructType\SelectItemsResponse|bool
+     */
+    public function SelectItems(\NOUTSoap\StructType\SelectItems $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('SelectItems', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named SelectPrintTemplate
+     * Meta informations extracted from the WSDL
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \NOUTSoap\StructType\SelectPrintTemplate $parameters
+     * @return \NOUTSoap\StructType\SelectPrintTemplateResponse|bool
+     */
+    public function SelectPrintTemplate(\NOUTSoap\StructType\SelectPrintTemplate $parameters)
+    {
+        try {
+            $this->setResult($this->__soapCall('SelectPrintTemplate', $parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
+            $this->saveLastError(__METHOD__, $soapFault);
+            return false;
+        }
+    }
+    /**
+     * Method to call the operation originally named SendMessage
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
@@ -1019,13 +1641,13 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param Disconnect $disconnect
-     * @return DisconnectResponse|bool
+     * @param \NOUTSoap\StructType\SendMessage $parameters
+     * @return \NOUTSoap\StructType\SendMessageResponse|bool
      */
-    public function Disconnect($disconnect)
+    public function SendMessage(\NOUTSoap\StructType\SendMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->Disconnect($disconnect));
+            $this->setResult($this->__soapCall('SendMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1033,24 +1655,25 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named GetTableChild
+     * Method to call the operation originally named TransformInto
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
+     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetTableChild $parameters
-     * @return \NOUTSoap\StructType\GetTableChildResponse|bool
+     * @param \NOUTSoap\StructType\TransformInto $parameters
+     * @return \NOUTSoap\StructType\TransformIntoResponse|bool
      */
-    public function GetTableChild(\NOUTSoap\StructType\GetTableChild $parameters)
+    public function TransformInto(\NOUTSoap\StructType\TransformInto $parameters)
     {
         try {
-            $this->setResult($this->GetTableChild('GetTableChild', $parameters));
+            $this->setResult($this->__soapCall('TransformInto', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1058,49 +1681,25 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named GetContentFolder
+     * Method to call the operation originally named Update
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
+     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetContentFolder $parameters
-     * @return \NOUTSoap\StructType\GetContentFolderResponse|bool
+     * @param \NOUTSoap\StructType\Update $parameters
+     * @return \NOUTSoap\StructType\UpdateResponse|bool
      */
-    public function GetContentFolder(\NOUTSoap\StructType\GetContentFolder $parameters)
+    public function Update(\NOUTSoap\StructType\Update $parameters)
     {
         try {
-            $this->setResult($this->__soapCall('GetContentFolder', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named ModifyFolder
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\ModifyFolder $parameters
-     * @return \NOUTSoap\StructType\ModifyFolderResponse|bool
-     */
-    public function ModifyFolder(\NOUTSoap\StructType\ModifyFolder $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('ModifyFolder', $parameters));
+            $this->setResult($this->__soapCall('Update', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1133,7 +1732,7 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named CreateFolder
+     * Method to call the operation originally named UpdateMessage
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
@@ -1144,13 +1743,13 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param CreateFolder $createFolder
-     * @return \NOUTSoap\StructType\CreateFolderResponse|bool
+     * @param \NOUTSoap\StructType\UpdateMessage $parameters
+     * @return \NOUTSoap\StructType\UpdateMessageResponse|bool
      */
-    public function CreateFolder($createFolder)
+    public function UpdateMessage(\NOUTSoap\StructType\UpdateMessage $parameters)
     {
         try {
-            $this->setResult(self::_getSoapClient()->CreateFolder($createFolder));
+            $this->setResult($this->__soapCall('UpdateMessage', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1158,23 +1757,24 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named DeleteFolder
+     * Method to call the operation originally named Validate
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
+     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
+     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
+     * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\DeleteFolder $parameters
-     * @return DeleteFolderResponse|bool
+     * @param Validate $validate
+     * @return \NOUTSoap\StructType\ValidateResponse|bool
      */
-    public function DeleteFolder(\NOUTSoap\StructType\DeleteFolder $parameters)
+    public function Validate($validate)
     {
         try {
-            $this->setResult($this->__soapCall('DeleteFolder', $parameters));
+            $this->setResult(self::_getSoapClient()->Validate($validate));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1206,7 +1806,7 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named CancelFolder
+     * Method to call the operation originally named WithAutomaticResponse
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
@@ -1216,381 +1816,13 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\CancelFolder $parameters
-     * @return CancelFolderResponse|bool
+     * @param \NOUTSoap\StructType\WithAutomaticResponse $parameters
+     * @return \NOUTSoap\StructType\WithAutomaticResponseResponse|bool
      */
-    public function CancelFolder(\NOUTSoap\StructType\CancelFolder $parameters)
+    public function WithAutomaticResponse(\NOUTSoap\StructType\WithAutomaticResponse $parameters)
     {
         try {
-            $this->setResult($this->__soapCall('CancelFolder', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named GetFolderList
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param GetFolderList $getFolderList
-     * @return \NOUTSoap\StructType\GetFolderListResponse|bool
-     */
-    public function GetFolderList($getFolderList)
-    {
-        try {
-            $this->setResult(self::_getSoapClient()->GetFolderList($getFolderList));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named CloseFolderList
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\CloseFolderList $parameters
-     * @return CloseFolderListResponse|bool
-     */
-    public function CloseFolderList(\NOUTSoap\StructType\CloseFolderList $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('CloseFolderList', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named RequestMessage
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, ActionContext, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\RequestMessage $parameters
-     * @return \NOUTSoap\StructType\RequestMessageResponse|bool
-     */
-    public function RequestMessage(\NOUTSoap\StructType\RequestMessage $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('RequestMessage', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named GetListMessage
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetListMessage $parameters
-     * @return \NOUTSoap\StructType\GetListMessageResponse|bool
-     */
-    public function GetListMessage(\NOUTSoap\StructType\GetListMessage $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('GetListMessage', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named CloseMessageList
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\CloseMessageList $parameters
-     * @return CloseMessageListResponse|bool
-     */
-    public function CloseMessageList(\NOUTSoap\StructType\CloseMessageList $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('CloseMessageList', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named ModifyMessage
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\ModifyMessage $parameters
-     * @return \NOUTSoap\StructType\ModifyMessageResponse|bool
-     */
-    public function ModifyMessage(\NOUTSoap\StructType\ModifyMessage $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('ModifyMessage', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named UpdateMessage
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\UpdateMessage $parameters
-     * @return \NOUTSoap\StructType\UpdateMessageResponse|bool
-     */
-    public function UpdateMessage(\NOUTSoap\StructType\UpdateMessage $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('UpdateMessage', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named CreateMessage
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\CreateMessage $parameters
-     * @return \NOUTSoap\StructType\CreateMessageResponse|bool
-     */
-    public function CreateMessage(\NOUTSoap\StructType\CreateMessage $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('CreateMessage', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named SendMessage
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\SendMessage $parameters
-     * @return \NOUTSoap\StructType\SendMessageResponse|bool
-     */
-    public function SendMessage(\NOUTSoap\StructType\SendMessage $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('SendMessage', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named CancelMessage
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\CancelMessage $parameters
-     * @return CancelMessageResponse|bool
-     */
-    public function CancelMessage(\NOUTSoap\StructType\CancelMessage $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('CancelMessage', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named InitRecordFromMessage
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, ActionContext, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\InitRecordFromMessage $parameters
-     * @return \NOUTSoap\StructType\InitRecordFromMessageResponse|bool
-     */
-    public function InitRecordFromMessage(\NOUTSoap\StructType\InitRecordFromMessage $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('InitRecordFromMessage', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named InitRecordFromAddress
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, ActionContext, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\InitRecordFromAddress $parameters
-     * @return \NOUTSoap\StructType\InitRecordFromAddressResponse|bool
-     */
-    public function InitRecordFromAddress(\NOUTSoap\StructType\InitRecordFromAddress $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('InitRecordFromAddress', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named GetPJ
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\GetPJ $parameters
-     * @return \NOUTSoap\StructType\GetPJResponse|bool
-     */
-    public function GetPJ(\NOUTSoap\StructType\GetPJ $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('GetPJ', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named DeletePJ
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\DeletePJ $parameters
-     * @return \NOUTSoap\StructType\DeletePJResponse|bool
-     */
-    public function DeletePJ(\NOUTSoap\StructType\DeletePJ $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('DeletePJ', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named AddPJ
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\AddPJ $parameters
-     * @return \NOUTSoap\StructType\AddPJResponse|bool
-     */
-    public function AddPJ(\NOUTSoap\StructType\AddPJ $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('AddPJ', $parameters));
+            $this->setResult($this->__soapCall('WithAutomaticResponse', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1622,105 +1854,9 @@ class Service extends AbstractSoapClientBase
         }
     }
     /**
-     * Method to call the operation originally named CheckRecipient
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\CheckRecipient $parameters
-     * @return \NOUTSoap\StructType\CheckRecipientResponse|bool
-     */
-    public function CheckRecipient(\NOUTSoap\StructType\CheckRecipient $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('CheckRecipient', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named CheckCreateElement
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\CheckCreateElement $parameters
-     * @return \NOUTSoap\StructType\CheckCreateElementResponse|bool
-     */
-    public function CheckCreateElement(\NOUTSoap\StructType\CheckCreateElement $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('CheckCreateElement', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named GetMailServiceStatus
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param GetMailServiceStatus $getMailServiceStatus
-     * @return \NOUTSoap\StructType\GetMailServiceStatusResponse|bool
-     */
-    public function GetMailServiceStatus($getMailServiceStatus)
-    {
-        try {
-            $this->setResult(self::_getSoapClient()->GetMailServiceStatus($getMailServiceStatus));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
-     * Method to call the operation originally named WithAutomaticResponse
-     * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
-     * - SOAPHeaders : optional, required, required, optional, optional
-     * @uses AbstractSoapClientBase::getSoapClient()
-     * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \NOUTSoap\StructType\WithAutomaticResponse $parameters
-     * @return \NOUTSoap\StructType\WithAutomaticResponseResponse|bool
-     */
-    public function WithAutomaticResponse(\NOUTSoap\StructType\WithAutomaticResponse $parameters)
-    {
-        try {
-            $this->setResult($this->__soapCall('WithAutomaticResponse', $parameters));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
-            $this->saveLastError(__METHOD__, $soapFault);
-            return false;
-        }
-    }
-    /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return CancelFolderResponse|CancelMessageResponse|CloseFolderListResponse|CloseMessageListResponse|DeleteFolderResponse|DisconnectResponse|ValidateFolderResponse|\NOUTSoap\StructType\AddPJResponse|\NOUTSoap\StructType\CancelResponse|\NOUTSoap\StructType\CheckCreateElementResponse|\NOUTSoap\StructType\CheckRecipientResponse|\NOUTSoap\StructType\ConfirmResponseResponse|\NOUTSoap\StructType\CreateFolderResponse|\NOUTSoap\StructType\CreateFromResponse|\NOUTSoap\StructType\CreateMessageResponse|\NOUTSoap\StructType\CreateResponse|\NOUTSoap\StructType\DeletePJResponse|\NOUTSoap\StructType\DeleteResponse|\NOUTSoap\StructType\DisplayResponse|\NOUTSoap\StructType\ExecuteResponse|\NOUTSoap\StructType\GetCalculationResponse|\NOUTSoap\StructType\GetColInRecordResponse|\NOUTSoap\StructType\GetContentFolderResponse|\NOUTSoap\StructType\GetEndAutomatismResponse|\NOUTSoap\StructType\GetFolderListResponse|\NOUTSoap\StructType\GetLanguagesResponse|\NOUTSoap\StructType\GetListMessageResponse|\NOUTSoap\StructType\GetMailServiceStatusResponse|\NOUTSoap\StructType\GetPJResponse|\NOUTSoap\StructType\GetPlanningInfoResponse|\NOUTSoap\StructType\GetStartAutomatismResponse|\NOUTSoap\StructType\GetTableChildResponse|\NOUTSoap\StructType\GetTemporalAutomatismResponse|\NOUTSoap\StructType\GetTokenSessionResponse|\NOUTSoap\StructType\HasChangedResponse|\NOUTSoap\StructType\InitRecordFromAddressResponse|\NOUTSoap\StructType\InitRecordFromMessageResponse|\NOUTSoap\StructType\ListResponse|\NOUTSoap\StructType\ModifyFolderResponse|\NOUTSoap\StructType\ModifyMessageResponse|\NOUTSoap\StructType\ModifyResponse|\NOUTSoap\StructType\PrintResponse|\NOUTSoap\StructType\RequestMessageResponse|\NOUTSoap\StructType\RequestParamResponse|\NOUTSoap\StructType\RequestResponse|\NOUTSoap\StructType\ResetPasswordFailedResponse|\NOUTSoap\StructType\SearchResponse|\NOUTSoap\StructType\SelectFormResponse|\NOUTSoap\StructType\SelectPrintTemplateResponse|\NOUTSoap\StructType\SendMessageResponse|\NOUTSoap\StructType\TransformIntoResponse|\NOUTSoap\StructType\UpdateFolderResponse|\NOUTSoap\StructType\UpdateMessageResponse|\NOUTSoap\StructType\UpdateResponse|\NOUTSoap\StructType\ValidateResponse|\NOUTSoap\StructType\WithAutomaticResponseResponse|\NOUTSoap\StructType\ZipPJResponse
+     * @return CancelFolderResponse|CancelMessageResponse|CloseFolderListResponse|CloseMessageListResponse|DeleteFolderResponse|DisconnectResponse|ValidateFolderResponse|\NOUTSoap\StructType\AddPJResponse|\NOUTSoap\StructType\CancelResponse|\NOUTSoap\StructType\CheckCreateElementResponse|\NOUTSoap\StructType\CheckRecipientResponse|\NOUTSoap\StructType\ConfirmResponseResponse|\NOUTSoap\StructType\CreateFolderResponse|\NOUTSoap\StructType\CreateFromResponse|\NOUTSoap\StructType\CreateMessageResponse|\NOUTSoap\StructType\CreateResponse|\NOUTSoap\StructType\DeletePJResponse|\NOUTSoap\StructType\DeleteResponse|\NOUTSoap\StructType\DisplayResponse|\NOUTSoap\StructType\DrillThroughResponse|\NOUTSoap\StructType\EnterReorderListModeResponse|\NOUTSoap\StructType\ExecuteResponse|\NOUTSoap\StructType\GetCalculationResponse|\NOUTSoap\StructType\GetChartResponse|\NOUTSoap\StructType\GetColInRecordResponse|\NOUTSoap\StructType\GetContentFolderResponse|\NOUTSoap\StructType\GetEndAutomatismResponse|\NOUTSoap\StructType\GetFolderListResponse|\NOUTSoap\StructType\GetLanguagesResponse|\NOUTSoap\StructType\GetListMessageResponse|\NOUTSoap\StructType\GetMailServiceStatusResponse|\NOUTSoap\StructType\GetPJResponse|\NOUTSoap\StructType\GetPlanningInfoResponse|\NOUTSoap\StructType\GetStartAutomatismResponse|\NOUTSoap\StructType\GetTableChildResponse|\NOUTSoap\StructType\GetTemporalAutomatismResponse|\NOUTSoap\StructType\GetTokenSessionResponse|\NOUTSoap\StructType\HasChangedResponse|\NOUTSoap\StructType\InitRecordFromAddressResponse|\NOUTSoap\StructType\InitRecordFromMessageResponse|\NOUTSoap\StructType\ListResponse|\NOUTSoap\StructType\ModifyFolderResponse|\NOUTSoap\StructType\ModifyMessageResponse|\NOUTSoap\StructType\ModifyResponse|\NOUTSoap\StructType\PrintResponse|\NOUTSoap\StructType\ReorderListResponse|\NOUTSoap\StructType\ReorderSubListResponse|\NOUTSoap\StructType\RequestMessageResponse|\NOUTSoap\StructType\RequestParamResponse|\NOUTSoap\StructType\RequestResponse|\NOUTSoap\StructType\ResetPasswordFailedResponse|\NOUTSoap\StructType\SearchResponse|\NOUTSoap\StructType\SelectFormResponse|\NOUTSoap\StructType\SelectItemsResponse|\NOUTSoap\StructType\SelectPrintTemplateResponse|\NOUTSoap\StructType\SendMessageResponse|\NOUTSoap\StructType\TransformIntoResponse|\NOUTSoap\StructType\UpdateFolderResponse|\NOUTSoap\StructType\UpdateMessageResponse|\NOUTSoap\StructType\UpdateResponse|\NOUTSoap\StructType\ValidateResponse|\NOUTSoap\StructType\WithAutomaticResponseResponse|\NOUTSoap\StructType\ZipPJResponse
      */
     public function getResult()
     {

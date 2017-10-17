@@ -5,46 +5,46 @@ namespace NOUTSoap\StructType;
 use \NOUTSoap\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for ReOrderResponse StructType
+ * This class stands for ReorderSubListResponse StructType
  * @subpackage Structs
  */
-class ReOrderResponse extends AbstractStructBase
+class ReorderSubListResponse extends AbstractStructBase
 {
     /**
-     * The xml
+     * The Value
      * @var string
      */
-    public $xml;
+    public $Value;
     /**
-     * Constructor method for ReOrderResponse
-     * @uses ReOrderResponse::setXml()
-     * @param string $xml
+     * Constructor method for ReorderSubListResponse
+     * @uses ReorderSubListResponse::setValue()
+     * @param string $value
      */
-    public function __construct($xml = null)
+    public function __construct($value = null)
     {
         $this
-            ->setXml($xml);
+            ->setValue($value);
     }
     /**
-     * Get xml value
+     * Get Value value
      * @return string|null
      */
-    public function getXml()
+    public function getValue()
     {
-        return $this->xml;
+        return $this->Value;
     }
     /**
-     * Set xml value
-     * @param string $xml
-     * @return \NOUTSoap\StructType\ReOrderResponse
+     * Set Value value
+     * @param string $value
+     * @return \NOUTSoap\StructType\ReorderSubListResponse
      */
-    public function setXml($xml = null)
+    public function setValue($value = null)
     {
         // validation for constraint: string
-        if (!is_null($xml) && !is_string($xml)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($xml)), __LINE__);
+        if (!is_null($value) && !is_string($value)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($value)), __LINE__);
         }
-        $this->xml = $xml;
+        $this->Value = $value;
         return $this;
     }
     /**
@@ -53,7 +53,7 @@ class ReOrderResponse extends AbstractStructBase
      * @see AbstractStructBase::__set_state()
      * @uses AbstractStructBase::__set_state()
      * @param array $array the exported values
-     * @return \NOUTSoap\StructType\ReOrderResponse
+     * @return \NOUTSoap\StructType\ReorderSubListResponse
      */
     public static function __set_state(array $array)
     {

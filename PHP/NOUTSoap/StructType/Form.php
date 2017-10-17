@@ -31,6 +31,11 @@ class Form extends AbstractStructBase
      */
     public $typeform;
     /**
+     * The withBtnOrderPossible
+     * @var int
+     */
+    public $withBtnOrderPossible;
+    /**
      * The sort1
      * @var string
      */
@@ -66,6 +71,7 @@ class Form extends AbstractStructBase
      * @uses Form::setTitle()
      * @uses Form::setChecksum()
      * @uses Form::setTypeform()
+     * @uses Form::setWithBtnOrderPossible()
      * @uses Form::setSort1()
      * @uses Form::setSort2()
      * @uses Form::setSort3()
@@ -76,6 +82,7 @@ class Form extends AbstractStructBase
      * @param string $title
      * @param string $checksum
      * @param string $typeform
+     * @param int $withBtnOrderPossible
      * @param string $sort1
      * @param string $sort2
      * @param string $sort3
@@ -83,13 +90,14 @@ class Form extends AbstractStructBase
      * @param string $sort2asc
      * @param string $sort3asc
      */
-    public function __construct($_ = null, $title = null, $checksum = null, $typeform = null, $sort1 = null, $sort2 = null, $sort3 = null, $sort1asc = null, $sort2asc = null, $sort3asc = null)
+    public function __construct($_ = null, $title = null, $checksum = null, $typeform = null, $withBtnOrderPossible = null, $sort1 = null, $sort2 = null, $sort3 = null, $sort1asc = null, $sort2asc = null, $sort3asc = null)
     {
         $this
             ->set_($_)
             ->setTitle($title)
             ->setChecksum($checksum)
             ->setTypeform($typeform)
+            ->setWithBtnOrderPossible($withBtnOrderPossible)
             ->setSort1($sort1)
             ->setSort2($sort2)
             ->setSort3($sort3)
@@ -183,6 +191,28 @@ class Form extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($typeform)), __LINE__);
         }
         $this->typeform = $typeform;
+        return $this;
+    }
+    /**
+     * Get withBtnOrderPossible value
+     * @return int|null
+     */
+    public function getWithBtnOrderPossible()
+    {
+        return $this->withBtnOrderPossible;
+    }
+    /**
+     * Set withBtnOrderPossible value
+     * @param int $withBtnOrderPossible
+     * @return \NOUTSoap\StructType\Form
+     */
+    public function setWithBtnOrderPossible($withBtnOrderPossible = null)
+    {
+        // validation for constraint: int
+        if (!is_null($withBtnOrderPossible) && !is_numeric($withBtnOrderPossible)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($withBtnOrderPossible)), __LINE__);
+        }
+        $this->withBtnOrderPossible = $withBtnOrderPossible;
         return $this;
     }
     /**

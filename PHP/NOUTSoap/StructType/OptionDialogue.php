@@ -12,66 +12,92 @@ class OptionDialogue extends AbstractStructBase
 {
     /**
      * The Readable
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $Readable;
     /**
      * The EncodingOutput
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $EncodingOutput;
     /**
      * The ReturnValue
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $ReturnValue;
     /**
      * The ReturnXSD
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $ReturnXSD;
     /**
      * The HTTPForceReturn
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $HTTPForceReturn;
     /**
      * The Ghost
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $Ghost;
     /**
      * The DefaultPagination
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $DefaultPagination;
     /**
      * The DisplayValue
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $DisplayValue;
     /**
      * The LanguageCode
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $LanguageCode;
     /**
      * The WithFieldStateControl
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $WithFieldStateControl;
     /**
      * The ListContentAsync
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $ListContentAsync;
     /**
      * The VersionMin
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $VersionMin;
     /**
      * The VersionPref
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $VersionPref;

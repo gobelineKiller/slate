@@ -27,6 +27,8 @@ class GetSubListContent extends AbstractStructBase
     public $SpecialParamList;
     /**
      * The DisplayMode
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var string
      */
     public $DisplayMode;

@@ -12,44 +12,67 @@ class SpecialParamListType extends AbstractStructBase
 {
     /**
      * The First
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $First;
     /**
      * The Length
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $Length;
     /**
      * The WithBreakRow
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $WithBreakRow;
     /**
      * The WithEndCalculation
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $WithEndCalculation;
     /**
      * The ChangePage
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $ChangePage;
     /**
      * The Sort1
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var \NOUTSoap\StructType\SortType
      */
     public $Sort1;
     /**
      * The Sort2
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var \NOUTSoap\StructType\SortType
      */
     public $Sort2;
     /**
      * The Sort3
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var \NOUTSoap\StructType\SortType
      */
     public $Sort3;
+    /**
+     * The ItemTreeParent
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
+     */
+    public $ItemTreeParent;
     /**
      * Constructor method for SpecialParamListType
      * @uses SpecialParamListType::setFirst()
@@ -60,6 +83,7 @@ class SpecialParamListType extends AbstractStructBase
      * @uses SpecialParamListType::setSort1()
      * @uses SpecialParamListType::setSort2()
      * @uses SpecialParamListType::setSort3()
+     * @uses SpecialParamListType::setItemTreeParent()
      * @param int $first
      * @param int $length
      * @param int $withBreakRow
@@ -68,8 +92,9 @@ class SpecialParamListType extends AbstractStructBase
      * @param \NOUTSoap\StructType\SortType $sort1
      * @param \NOUTSoap\StructType\SortType $sort2
      * @param \NOUTSoap\StructType\SortType $sort3
+     * @param string $itemTreeParent
      */
-    public function __construct($first = null, $length = null, $withBreakRow = null, $withEndCalculation = null, $changePage = null, \NOUTSoap\StructType\SortType $sort1 = null, \NOUTSoap\StructType\SortType $sort2 = null, \NOUTSoap\StructType\SortType $sort3 = null)
+    public function __construct($first = null, $length = null, $withBreakRow = null, $withEndCalculation = null, $changePage = null, \NOUTSoap\StructType\SortType $sort1 = null, \NOUTSoap\StructType\SortType $sort2 = null, \NOUTSoap\StructType\SortType $sort3 = null, $itemTreeParent = null)
     {
         $this
             ->setFirst($first)
@@ -79,7 +104,8 @@ class SpecialParamListType extends AbstractStructBase
             ->setChangePage($changePage)
             ->setSort1($sort1)
             ->setSort2($sort2)
-            ->setSort3($sort3);
+            ->setSort3($sort3)
+            ->setItemTreeParent($itemTreeParent);
     }
     /**
      * Get First value
@@ -243,6 +269,28 @@ class SpecialParamListType extends AbstractStructBase
     public function setSort3(\NOUTSoap\StructType\SortType $sort3 = null)
     {
         $this->Sort3 = $sort3;
+        return $this;
+    }
+    /**
+     * Get ItemTreeParent value
+     * @return string|null
+     */
+    public function getItemTreeParent()
+    {
+        return $this->ItemTreeParent;
+    }
+    /**
+     * Set ItemTreeParent value
+     * @param string $itemTreeParent
+     * @return \NOUTSoap\StructType\SpecialParamListType
+     */
+    public function setItemTreeParent($itemTreeParent = null)
+    {
+        // validation for constraint: string
+        if (!is_null($itemTreeParent) && !is_string($itemTreeParent)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemTreeParent)), __LINE__);
+        }
+        $this->ItemTreeParent = $itemTreeParent;
         return $this;
     }
     /**

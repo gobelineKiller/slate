@@ -1037,7 +1037,7 @@ class Service extends AbstractSoapClientBase
     public function GetTableChild(\NOUTSoap\StructType\GetTableChild $parameters)
     {
         try {
-            $this->setResult($this->GetTableChild('GetTableChild', $parameters));
+            $this->setResult($this->__soapCall('GetTableChild', $parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

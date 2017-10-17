@@ -26,11 +26,6 @@ class Search extends AbstractStructBase
      */
     public $SpecialParamList;
     /**
-     * The CallingColumn
-     * @var string
-     */
-    public $CallingColumn;
-    /**
      * The Checksum
      * @var int
      */
@@ -41,29 +36,46 @@ class Search extends AbstractStructBase
      */
     public $DisplayMode;
     /**
+     * The CallingColumn
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
+     */
+    public $CallingColumn;
+    /**
+     * The CallingInfo
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var \NOUTSoap\StructType\CallingInfoType
+     */
+    public $CallingInfo;
+    /**
      * Constructor method for Search
      * @uses Search::setTable()
      * @uses Search::setParamXML()
      * @uses Search::setSpecialParamList()
-     * @uses Search::setCallingColumn()
      * @uses Search::setChecksum()
      * @uses Search::setDisplayMode()
+     * @uses Search::setCallingColumn()
+     * @uses Search::setCallingInfo()
      * @param string $table
      * @param string $paramXML
      * @param \NOUTSoap\StructType\SpecialParamListType $specialParamList
-     * @param string $callingColumn
      * @param int $checksum
      * @param string $displayMode
+     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
      */
-    public function __construct($table = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $callingColumn = null, $checksum = null, $displayMode = null)
+    public function __construct($table = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $checksum = null, $displayMode = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null)
     {
         $this
             ->setTable($table)
             ->setParamXML($paramXML)
             ->setSpecialParamList($specialParamList)
-            ->setCallingColumn($callingColumn)
             ->setChecksum($checksum)
-            ->setDisplayMode($displayMode);
+            ->setDisplayMode($displayMode)
+            ->setCallingColumn($callingColumn)
+            ->setCallingInfo($callingInfo);
     }
     /**
      * Get Table value
@@ -128,28 +140,6 @@ class Search extends AbstractStructBase
         return $this;
     }
     /**
-     * Get CallingColumn value
-     * @return string|null
-     */
-    public function getCallingColumn()
-    {
-        return $this->CallingColumn;
-    }
-    /**
-     * Set CallingColumn value
-     * @param string $callingColumn
-     * @return \NOUTSoap\StructType\Search
-     */
-    public function setCallingColumn($callingColumn = null)
-    {
-        // validation for constraint: string
-        if (!is_null($callingColumn) && !is_string($callingColumn)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
-        }
-        $this->CallingColumn = $callingColumn;
-        return $this;
-    }
-    /**
      * Get Checksum value
      * @return int|null
      */
@@ -194,6 +184,46 @@ class Search extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $displayMode, implode(', ', \NOUTSoap\EnumType\DisplayModeParamEnum::getValidValues())), __LINE__);
         }
         $this->DisplayMode = $displayMode;
+        return $this;
+    }
+    /**
+     * Get CallingColumn value
+     * @return string|null
+     */
+    public function getCallingColumn()
+    {
+        return $this->CallingColumn;
+    }
+    /**
+     * Set CallingColumn value
+     * @param string $callingColumn
+     * @return \NOUTSoap\StructType\Search
+     */
+    public function setCallingColumn($callingColumn = null)
+    {
+        // validation for constraint: string
+        if (!is_null($callingColumn) && !is_string($callingColumn)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
+        }
+        $this->CallingColumn = $callingColumn;
+        return $this;
+    }
+    /**
+     * Get CallingInfo value
+     * @return \NOUTSoap\StructType\CallingInfoType|null
+     */
+    public function getCallingInfo()
+    {
+        return $this->CallingInfo;
+    }
+    /**
+     * Set CallingInfo value
+     * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
+     * @return \NOUTSoap\StructType\Search
+     */
+    public function setCallingInfo(\NOUTSoap\StructType\CallingInfoType $callingInfo = null)
+    {
+        $this->CallingInfo = $callingInfo;
         return $this;
     }
     /**

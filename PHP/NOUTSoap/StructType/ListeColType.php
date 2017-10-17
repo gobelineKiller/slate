@@ -14,7 +14,6 @@ class ListeColType extends AbstractStructBase
      * The Column
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
-     * - minOccurs: 1
      * @var string[]
      */
     public $Column;
@@ -30,7 +29,7 @@ class ListeColType extends AbstractStructBase
     }
     /**
      * Get Column value
-     * @return string[]
+     * @return string[]|null
      */
     public function getColumn()
     {

@@ -14,7 +14,6 @@ class LanguageCodeList extends AbstractStructBase
      * The LanguageCode
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
-     * - minOccurs: 1
      * @var int[]
      */
     public $LanguageCode;
@@ -30,7 +29,7 @@ class LanguageCodeList extends AbstractStructBase
     }
     /**
      * Get LanguageCode value
-     * @return int[]
+     * @return int[]|null
      */
     public function getLanguageCode()
     {

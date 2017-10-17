@@ -27,27 +27,49 @@ class Create extends AbstractStructBase
     public $IDMessage;
     /**
      * The CallingColumn
-     * @var \NOUTSoap\StructType\CallingColumnType
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
      */
     public $CallingColumn;
+    /**
+     * The CallingInfo
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var \NOUTSoap\StructType\CallingInfoType
+     */
+    public $CallingInfo;
+    /**
+     * The UpdateData
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
+     */
+    public $UpdateData;
     /**
      * Constructor method for Create
      * @uses Create::setTable()
      * @uses Create::setParamXML()
      * @uses Create::setIDMessage()
      * @uses Create::setCallingColumn()
+     * @uses Create::setCallingInfo()
+     * @uses Create::setUpdateData()
      * @param string $table
      * @param string $paramXML
      * @param string $iDMessage
-     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
+     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
+     * @param string $updateData
      */
-    public function __construct($table = null, $paramXML = null, $iDMessage = null, \NOUTSoap\StructType\CallingColumnType $callingColumn = null)
+    public function __construct($table = null, $paramXML = null, $iDMessage = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null, $updateData = null)
     {
         $this
             ->setTable($table)
             ->setParamXML($paramXML)
             ->setIDMessage($iDMessage)
-            ->setCallingColumn($callingColumn);
+            ->setCallingColumn($callingColumn)
+            ->setCallingInfo($callingInfo)
+            ->setUpdateData($updateData);
     }
     /**
      * Get Table value
@@ -117,7 +139,7 @@ class Create extends AbstractStructBase
     }
     /**
      * Get CallingColumn value
-     * @return \NOUTSoap\StructType\CallingColumnType|null
+     * @return string|null
      */
     public function getCallingColumn()
     {
@@ -125,12 +147,56 @@ class Create extends AbstractStructBase
     }
     /**
      * Set CallingColumn value
-     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
+     * @param string $callingColumn
      * @return \NOUTSoap\StructType\Create
      */
-    public function setCallingColumn(\NOUTSoap\StructType\CallingColumnType $callingColumn = null)
+    public function setCallingColumn($callingColumn = null)
     {
+        // validation for constraint: string
+        if (!is_null($callingColumn) && !is_string($callingColumn)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
+        }
         $this->CallingColumn = $callingColumn;
+        return $this;
+    }
+    /**
+     * Get CallingInfo value
+     * @return \NOUTSoap\StructType\CallingInfoType|null
+     */
+    public function getCallingInfo()
+    {
+        return $this->CallingInfo;
+    }
+    /**
+     * Set CallingInfo value
+     * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
+     * @return \NOUTSoap\StructType\Create
+     */
+    public function setCallingInfo(\NOUTSoap\StructType\CallingInfoType $callingInfo = null)
+    {
+        $this->CallingInfo = $callingInfo;
+        return $this;
+    }
+    /**
+     * Get UpdateData value
+     * @return string|null
+     */
+    public function getUpdateData()
+    {
+        return $this->UpdateData;
+    }
+    /**
+     * Set UpdateData value
+     * @param string $updateData
+     * @return \NOUTSoap\StructType\Create
+     */
+    public function setUpdateData($updateData = null)
+    {
+        // validation for constraint: string
+        if (!is_null($updateData) && !is_string($updateData)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($updateData)), __LINE__);
+        }
+        $this->UpdateData = $updateData;
         return $this;
     }
     /**

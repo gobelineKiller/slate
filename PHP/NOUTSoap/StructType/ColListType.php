@@ -14,7 +14,6 @@ class ColListType extends AbstractStructBase
      * The Col
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
-     * - minOccurs: 1
      * @var string[]
      */
     public $Col;
@@ -30,7 +29,7 @@ class ColListType extends AbstractStructBase
     }
     /**
      * Get Col value
-     * @return string[]
+     * @return string[]|null
      */
     public function getCol()
     {

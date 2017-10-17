@@ -14,7 +14,6 @@ class CalculationListType extends AbstractStructBase
      * The Calculation
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
-     * - minOccurs: 1
      * @var string[]
      */
     public $Calculation;
@@ -30,7 +29,7 @@ class CalculationListType extends AbstractStructBase
     }
     /**
      * Get Calculation value
-     * @return string[]
+     * @return string[]|null
      */
     public function getCalculation()
     {

@@ -26,11 +26,6 @@ class _List extends AbstractStructBase
      */
     public $SpecialParamList;
     /**
-     * The CallingColumn
-     * @var \NOUTSoap\StructType\CallingColumnType
-     */
-    public $CallingColumn;
-    /**
      * The NoCache
      * @var int
      */
@@ -46,32 +41,49 @@ class _List extends AbstractStructBase
      */
     public $DisplayMode;
     /**
+     * The CallingColumn
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
+     */
+    public $CallingColumn;
+    /**
+     * The CallingInfo
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var \NOUTSoap\StructType\CallingInfoType
+     */
+    public $CallingInfo;
+    /**
      * Constructor method for List
      * @uses _List::setTable()
      * @uses _List::setParamXML()
      * @uses _List::setSpecialParamList()
-     * @uses _List::setCallingColumn()
      * @uses _List::setNoCache()
      * @uses _List::setChecksum()
      * @uses _List::setDisplayMode()
+     * @uses _List::setCallingColumn()
+     * @uses _List::setCallingInfo()
      * @param string $table
      * @param string $paramXML
      * @param \NOUTSoap\StructType\SpecialParamListType $specialParamList
-     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      * @param int $noCache
      * @param int $checksum
      * @param string $displayMode
+     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
      */
-    public function __construct($table = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, \NOUTSoap\StructType\CallingColumnType $callingColumn = null, $noCache = null, $checksum = null, $displayMode = null)
+    public function __construct($table = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $noCache = null, $checksum = null, $displayMode = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null)
     {
         $this
             ->setTable($table)
             ->setParamXML($paramXML)
             ->setSpecialParamList($specialParamList)
-            ->setCallingColumn($callingColumn)
             ->setNoCache($noCache)
             ->setChecksum($checksum)
-            ->setDisplayMode($displayMode);
+            ->setDisplayMode($displayMode)
+            ->setCallingColumn($callingColumn)
+            ->setCallingInfo($callingInfo);
     }
     /**
      * Get Table value
@@ -133,24 +145,6 @@ class _List extends AbstractStructBase
     public function setSpecialParamList(\NOUTSoap\StructType\SpecialParamListType $specialParamList = null)
     {
         $this->SpecialParamList = $specialParamList;
-        return $this;
-    }
-    /**
-     * Get CallingColumn value
-     * @return \NOUTSoap\StructType\CallingColumnType|null
-     */
-    public function getCallingColumn()
-    {
-        return $this->CallingColumn;
-    }
-    /**
-     * Set CallingColumn value
-     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
-     * @return \NOUTSoap\StructType\_List
-     */
-    public function setCallingColumn(\NOUTSoap\StructType\CallingColumnType $callingColumn = null)
-    {
-        $this->CallingColumn = $callingColumn;
         return $this;
     }
     /**
@@ -220,6 +214,46 @@ class _List extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $displayMode, implode(', ', \NOUTSoap\EnumType\DisplayModeParamEnum::getValidValues())), __LINE__);
         }
         $this->DisplayMode = $displayMode;
+        return $this;
+    }
+    /**
+     * Get CallingColumn value
+     * @return string|null
+     */
+    public function getCallingColumn()
+    {
+        return $this->CallingColumn;
+    }
+    /**
+     * Set CallingColumn value
+     * @param string $callingColumn
+     * @return \NOUTSoap\StructType\_List
+     */
+    public function setCallingColumn($callingColumn = null)
+    {
+        // validation for constraint: string
+        if (!is_null($callingColumn) && !is_string($callingColumn)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
+        }
+        $this->CallingColumn = $callingColumn;
+        return $this;
+    }
+    /**
+     * Get CallingInfo value
+     * @return \NOUTSoap\StructType\CallingInfoType|null
+     */
+    public function getCallingInfo()
+    {
+        return $this->CallingInfo;
+    }
+    /**
+     * Set CallingInfo value
+     * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
+     * @return \NOUTSoap\StructType\_List
+     */
+    public function setCallingInfo(\NOUTSoap\StructType\CallingInfoType $callingInfo = null)
+    {
+        $this->CallingInfo = $callingInfo;
         return $this;
     }
     /**

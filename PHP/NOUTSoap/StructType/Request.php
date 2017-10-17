@@ -16,11 +16,6 @@ class Request extends AbstractStructBase
      */
     public $Table;
     /**
-     * The CallingColumn
-     * @var \NOUTSoap\StructType\CallingColumnType
-     */
-    public $CallingColumn;
-    /**
      * The ColList
      * @var \NOUTSoap\StructType\ColListType
      */
@@ -51,35 +46,52 @@ class Request extends AbstractStructBase
      */
     public $Sort3;
     /**
+     * The CallingColumn
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
+     */
+    public $CallingColumn;
+    /**
+     * The CallingInfo
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var \NOUTSoap\StructType\CallingInfoType
+     */
+    public $CallingInfo;
+    /**
      * Constructor method for Request
      * @uses Request::setTable()
-     * @uses Request::setCallingColumn()
      * @uses Request::setColList()
      * @uses Request::setCondList()
      * @uses Request::setMaxResult()
      * @uses Request::setSort1()
      * @uses Request::setSort2()
      * @uses Request::setSort3()
+     * @uses Request::setCallingColumn()
+     * @uses Request::setCallingInfo()
      * @param string $table
-     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
      * @param \NOUTSoap\StructType\ColListType $colList
      * @param string $condList
      * @param int $maxResult
      * @param \NOUTSoap\StructType\SortType $sort1
      * @param \NOUTSoap\StructType\SortType $sort2
      * @param \NOUTSoap\StructType\SortType $sort3
+     * @param string $callingColumn
+     * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
      */
-    public function __construct($table = null, \NOUTSoap\StructType\CallingColumnType $callingColumn = null, \NOUTSoap\StructType\ColListType $colList = null, $condList = null, $maxResult = null, \NOUTSoap\StructType\SortType $sort1 = null, \NOUTSoap\StructType\SortType $sort2 = null, \NOUTSoap\StructType\SortType $sort3 = null)
+    public function __construct($table = null, \NOUTSoap\StructType\ColListType $colList = null, $condList = null, $maxResult = null, \NOUTSoap\StructType\SortType $sort1 = null, \NOUTSoap\StructType\SortType $sort2 = null, \NOUTSoap\StructType\SortType $sort3 = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null)
     {
         $this
             ->setTable($table)
-            ->setCallingColumn($callingColumn)
             ->setColList($colList)
             ->setCondList($condList)
             ->setMaxResult($maxResult)
             ->setSort1($sort1)
             ->setSort2($sort2)
-            ->setSort3($sort3);
+            ->setSort3($sort3)
+            ->setCallingColumn($callingColumn)
+            ->setCallingInfo($callingInfo);
     }
     /**
      * Get Table value
@@ -101,24 +113,6 @@ class Request extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($table)), __LINE__);
         }
         $this->Table = $table;
-        return $this;
-    }
-    /**
-     * Get CallingColumn value
-     * @return \NOUTSoap\StructType\CallingColumnType|null
-     */
-    public function getCallingColumn()
-    {
-        return $this->CallingColumn;
-    }
-    /**
-     * Set CallingColumn value
-     * @param \NOUTSoap\StructType\CallingColumnType $callingColumn
-     * @return \NOUTSoap\StructType\Request
-     */
-    public function setCallingColumn(\NOUTSoap\StructType\CallingColumnType $callingColumn = null)
-    {
-        $this->CallingColumn = $callingColumn;
         return $this;
     }
     /**
@@ -235,6 +229,46 @@ class Request extends AbstractStructBase
     public function setSort3(\NOUTSoap\StructType\SortType $sort3 = null)
     {
         $this->Sort3 = $sort3;
+        return $this;
+    }
+    /**
+     * Get CallingColumn value
+     * @return string|null
+     */
+    public function getCallingColumn()
+    {
+        return $this->CallingColumn;
+    }
+    /**
+     * Set CallingColumn value
+     * @param string $callingColumn
+     * @return \NOUTSoap\StructType\Request
+     */
+    public function setCallingColumn($callingColumn = null)
+    {
+        // validation for constraint: string
+        if (!is_null($callingColumn) && !is_string($callingColumn)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
+        }
+        $this->CallingColumn = $callingColumn;
+        return $this;
+    }
+    /**
+     * Get CallingInfo value
+     * @return \NOUTSoap\StructType\CallingInfoType|null
+     */
+    public function getCallingInfo()
+    {
+        return $this->CallingInfo;
+    }
+    /**
+     * Set CallingInfo value
+     * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
+     * @return \NOUTSoap\StructType\Request
+     */
+    public function setCallingInfo(\NOUTSoap\StructType\CallingInfoType $callingInfo = null)
+    {
+        $this->CallingInfo = $callingInfo;
         return $this;
     }
     /**

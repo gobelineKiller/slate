@@ -31,23 +31,31 @@ class UsernameTokenType extends AbstractStructBase
      */
     public $Created;
     /**
+     * The Encryption
+     * @var \NOUTSoap\StructType\EncryptionType
+     */
+    public $Encryption;
+    /**
      * Constructor method for UsernameTokenType
      * @uses UsernameTokenType::setUsername()
      * @uses UsernameTokenType::setPassword()
      * @uses UsernameTokenType::setNonce()
      * @uses UsernameTokenType::setCreated()
+     * @uses UsernameTokenType::setEncryption()
      * @param string $username
      * @param string $password
      * @param string $nonce
      * @param string $created
+     * @param \NOUTSoap\StructType\EncryptionType $encryption
      */
-    public function __construct($username = null, $password = null, $nonce = null, $created = null)
+    public function __construct($username = null, $password = null, $nonce = null, $created = null, \NOUTSoap\StructType\EncryptionType $encryption = null)
     {
         $this
             ->setUsername($username)
             ->setPassword($password)
             ->setNonce($nonce)
-            ->setCreated($created);
+            ->setCreated($created)
+            ->setEncryption($encryption);
     }
     /**
      * Get Username value
@@ -135,6 +143,24 @@ class UsernameTokenType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($created)), __LINE__);
         }
         $this->Created = $created;
+        return $this;
+    }
+    /**
+     * Get Encryption value
+     * @return \NOUTSoap\StructType\EncryptionType|null
+     */
+    public function getEncryption()
+    {
+        return $this->Encryption;
+    }
+    /**
+     * Set Encryption value
+     * @param \NOUTSoap\StructType\EncryptionType $encryption
+     * @return \NOUTSoap\StructType\UsernameTokenType
+     */
+    public function setEncryption(\NOUTSoap\StructType\EncryptionType $encryption = null)
+    {
+        $this->Encryption = $encryption;
         return $this;
     }
     /**

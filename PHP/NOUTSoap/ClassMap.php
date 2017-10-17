@@ -18,6 +18,7 @@ class ClassMap
         return array(
             'LanguageCodeList' => '\\NOUTSoap\\StructType\\LanguageCodeList',
             'GetLanguagesResponse' => '\\NOUTSoap\\StructType\\GetLanguagesResponse',
+            'EncryptionType' => '\\NOUTSoap\\StructType\\EncryptionType',
             'UsernameTokenType' => '\\NOUTSoap\\StructType\\UsernameTokenType',
             'ExtranetUserType' => '\\NOUTSoap\\StructType\\ExtranetUserType',
             'GetTokenSession' => '\\NOUTSoap\\StructType\\GetTokenSession',

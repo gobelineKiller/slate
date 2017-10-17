@@ -9,20 +9,20 @@ namespace NOUTSoap\EnumType;
 class StateEnum
 {
     /**
-     * Constant for value 'processed'
-     * @return string 'processed'
+     * Constant for value 'Processed'
+     * @return string 'Processed'
      */
-    const VALUE_PROCESSED = 'processed';
+    const VALUE_PROCESSED = 'Processed';
     /**
-     * Constant for value 'unprocessed'
-     * @return string 'unprocessed'
+     * Constant for value 'Unprocessed'
+     * @return string 'Unprocessed'
      */
-    const VALUE_UNPROCESSED = 'unprocessed';
+    const VALUE_UNPROCESSED = 'Unprocessed';
     /**
-     * Constant for value 'all'
-     * @return string 'all'
+     * Constant for value 'All'
+     * @return string 'All'
      */
-    const VALUE_ALL = 'all';
+    const VALUE_ALL = 'All';
     /**
      * Return true if value is allowed
      * @uses self::getValidValues()

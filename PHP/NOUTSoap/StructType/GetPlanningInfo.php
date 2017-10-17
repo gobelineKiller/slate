@@ -31,23 +31,39 @@ class GetPlanningInfo extends AbstractStructBase
      */
     public $Table;
     /**
+     * The ID
+     * @var string
+     */
+    public $ID;
+    /**
+     * The ParamXML
+     * @var string
+     */
+    public $ParamXML;
+    /**
      * Constructor method for GetPlanningInfo
      * @uses GetPlanningInfo::setResource()
      * @uses GetPlanningInfo::setStartTime()
      * @uses GetPlanningInfo::setEndTime()
      * @uses GetPlanningInfo::setTable()
+     * @uses GetPlanningInfo::setID()
+     * @uses GetPlanningInfo::setParamXML()
      * @param string $resource
      * @param string $startTime
      * @param string $endTime
      * @param string $table
+     * @param string $iD
+     * @param string $paramXML
      */
-    public function __construct($resource = null, $startTime = null, $endTime = null, $table = null)
+    public function __construct($resource = null, $startTime = null, $endTime = null, $table = null, $iD = null, $paramXML = null)
     {
         $this
             ->setResource($resource)
             ->setStartTime($startTime)
             ->setEndTime($endTime)
-            ->setTable($table);
+            ->setTable($table)
+            ->setID($iD)
+            ->setParamXML($paramXML);
     }
     /**
      * Get Resource value
@@ -135,6 +151,50 @@ class GetPlanningInfo extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($table)), __LINE__);
         }
         $this->Table = $table;
+        return $this;
+    }
+    /**
+     * Get ID value
+     * @return string|null
+     */
+    public function getID()
+    {
+        return $this->ID;
+    }
+    /**
+     * Set ID value
+     * @param string $iD
+     * @return \NOUTSoap\StructType\GetPlanningInfo
+     */
+    public function setID($iD = null)
+    {
+        // validation for constraint: string
+        if (!is_null($iD) && !is_string($iD)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($iD)), __LINE__);
+        }
+        $this->ID = $iD;
+        return $this;
+    }
+    /**
+     * Get ParamXML value
+     * @return string|null
+     */
+    public function getParamXML()
+    {
+        return $this->ParamXML;
+    }
+    /**
+     * Set ParamXML value
+     * @param string $paramXML
+     * @return \NOUTSoap\StructType\GetPlanningInfo
+     */
+    public function setParamXML($paramXML = null)
+    {
+        // validation for constraint: string
+        if (!is_null($paramXML) && !is_string($paramXML)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paramXML)), __LINE__);
+        }
+        $this->ParamXML = $paramXML;
         return $this;
     }
     /**

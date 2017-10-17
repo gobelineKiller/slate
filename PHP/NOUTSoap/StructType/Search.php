@@ -36,26 +36,34 @@ class Search extends AbstractStructBase
      */
     public $Checksum;
     /**
+     * The DisplayMode
+     * @var string
+     */
+    public $DisplayMode;
+    /**
      * Constructor method for Search
      * @uses Search::setTable()
      * @uses Search::setParamXML()
      * @uses Search::setSpecialParamList()
      * @uses Search::setCallingColumn()
      * @uses Search::setChecksum()
+     * @uses Search::setDisplayMode()
      * @param string $table
      * @param string $paramXML
      * @param \NOUTSoap\StructType\SpecialParamListType $specialParamList
      * @param string $callingColumn
      * @param int $checksum
+     * @param string $displayMode
      */
-    public function __construct($table = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $callingColumn = null, $checksum = null)
+    public function __construct($table = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $callingColumn = null, $checksum = null, $displayMode = null)
     {
         $this
             ->setTable($table)
             ->setParamXML($paramXML)
             ->setSpecialParamList($specialParamList)
             ->setCallingColumn($callingColumn)
-            ->setChecksum($checksum);
+            ->setChecksum($checksum)
+            ->setDisplayMode($displayMode);
     }
     /**
      * Get Table value
@@ -161,6 +169,31 @@ class Search extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($checksum)), __LINE__);
         }
         $this->Checksum = $checksum;
+        return $this;
+    }
+    /**
+     * Get DisplayMode value
+     * @return string|null
+     */
+    public function getDisplayMode()
+    {
+        return $this->DisplayMode;
+    }
+    /**
+     * Set DisplayMode value
+     * @uses \NOUTSoap\EnumType\DisplayModeParamEnum::valueIsValid()
+     * @uses \NOUTSoap\EnumType\DisplayModeParamEnum::getValidValues()
+     * @throws \InvalidArgumentException
+     * @param string $displayMode
+     * @return \NOUTSoap\StructType\Search
+     */
+    public function setDisplayMode($displayMode = null)
+    {
+        // validation for constraint: enumeration
+        if (!\NOUTSoap\EnumType\DisplayModeParamEnum::valueIsValid($displayMode)) {
+            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $displayMode, implode(', ', \NOUTSoap\EnumType\DisplayModeParamEnum::getValidValues())), __LINE__);
+        }
+        $this->DisplayMode = $displayMode;
         return $this;
     }
     /**

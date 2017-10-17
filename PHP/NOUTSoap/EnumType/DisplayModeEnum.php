@@ -9,15 +9,15 @@ namespace NOUTSoap\EnumType;
 class DisplayModeEnum
 {
     /**
-     * Constant for value 'list'
-     * @return string 'list'
+     * Constant for value 'List'
+     * @return string 'List'
      */
-    const VALUE_LIST = 'list';
+    const VALUE_LIST = 'List';
     /**
-     * Constant for value 'chart'
-     * @return string 'chart'
+     * Constant for value 'Chart'
+     * @return string 'Chart'
      */
-    const VALUE_CHART = 'chart';
+    const VALUE_CHART = 'Chart';
     /**
      * Return true if value is allowed
      * @uses self::getValidValues()

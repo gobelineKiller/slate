@@ -9,20 +9,20 @@ namespace NOUTSoap\EnumType;
 class WayEnum
 {
     /**
-     * Constant for value 'received'
-     * @return string 'received'
+     * Constant for value 'Received'
+     * @return string 'Received'
      */
-    const VALUE_RECEIVED = 'received';
+    const VALUE_RECEIVED = 'Received';
     /**
-     * Constant for value 'sent'
-     * @return string 'sent'
+     * Constant for value 'Sent'
+     * @return string 'Sent'
      */
-    const VALUE_SENT = 'sent';
+    const VALUE_SENT = 'Sent';
     /**
-     * Constant for value 'all'
-     * @return string 'all'
+     * Constant for value 'All'
+     * @return string 'All'
      */
-    const VALUE_ALL = 'all';
+    const VALUE_ALL = 'All';
     /**
      * Return true if value is allowed
      * @uses self::getValidValues()

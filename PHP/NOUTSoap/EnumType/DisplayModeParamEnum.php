@@ -3,21 +3,31 @@
 namespace NOUTSoap\EnumType;
 
 /**
- * This class stands for DisplayModeReturnEnum EnumType
+ * This class stands for DisplayModeParamEnum EnumType
  * @subpackage Enumerations
  */
-class DisplayModeReturnEnum
+class DisplayModeParamEnum
 {
     /**
-     * Constant for value 'list'
-     * @return string 'list'
+     * Constant for value 'List'
+     * @return string 'List'
      */
-    const VALUE_LIST = 'list';
+    const VALUE_LIST = 'List';
     /**
-     * Constant for value 'chartData'
-     * @return string 'chartData'
+     * Constant for value 'Chart'
+     * @return string 'Chart'
      */
-    const VALUE_CHART_DATA = 'chartData';
+    const VALUE_CHART = 'Chart';
+    /**
+     * Constant for value 'Planning'
+     * @return string 'Planning'
+     */
+    const VALUE_PLANNING = 'Planning';
+    /**
+     * Constant for value 'Thumbnail'
+     * @return string 'Thumbnail'
+     */
+    const VALUE_THUMBNAIL = 'Thumbnail';
     /**
      * Return true if value is allowed
      * @uses self::getValidValues()
@@ -31,14 +41,18 @@ class DisplayModeReturnEnum
     /**
      * Return allowed values
      * @uses self::VALUE_LIST
-     * @uses self::VALUE_CHART_DATA
+     * @uses self::VALUE_CHART
+     * @uses self::VALUE_PLANNING
+     * @uses self::VALUE_THUMBNAIL
      * @return string[]
      */
     public static function getValidValues()
     {
         return array(
             self::VALUE_LIST,
-            self::VALUE_CHART_DATA,
+            self::VALUE_CHART,
+            self::VALUE_PLANNING,
+            self::VALUE_THUMBNAIL,
         );
     }
     /**

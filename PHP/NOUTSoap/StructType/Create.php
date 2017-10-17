@@ -26,20 +26,28 @@ class Create extends AbstractStructBase
      */
     public $IDMessage;
     /**
+     * The CallingColumn
+     * @var string
+     */
+    public $CallingColumn;
+    /**
      * Constructor method for Create
      * @uses Create::setTable()
      * @uses Create::setParamXML()
      * @uses Create::setIDMessage()
+     * @uses Create::setCallingColumn()
      * @param string $table
      * @param string $paramXML
      * @param string $iDMessage
+     * @param string $callingColumn
      */
-    public function __construct($table = null, $paramXML = null, $iDMessage = null)
+    public function __construct($table = null, $paramXML = null, $iDMessage = null, $callingColumn = null)
     {
         $this
             ->setTable($table)
             ->setParamXML($paramXML)
-            ->setIDMessage($iDMessage);
+            ->setIDMessage($iDMessage)
+            ->setCallingColumn($callingColumn);
     }
     /**
      * Get Table value
@@ -105,6 +113,28 @@ class Create extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($iDMessage)), __LINE__);
         }
         $this->IDMessage = $iDMessage;
+        return $this;
+    }
+    /**
+     * Get CallingColumn value
+     * @return string|null
+     */
+    public function getCallingColumn()
+    {
+        return $this->CallingColumn;
+    }
+    /**
+     * Set CallingColumn value
+     * @param string $callingColumn
+     * @return \NOUTSoap\StructType\Create
+     */
+    public function setCallingColumn($callingColumn = null)
+    {
+        // validation for constraint: string
+        if (!is_null($callingColumn) && !is_string($callingColumn)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
+        }
+        $this->CallingColumn = $callingColumn;
         return $this;
     }
     /**

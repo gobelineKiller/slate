@@ -34,6 +34,11 @@ class ReturnType
      */
     const VALUE_LIST = 'List';
     /**
+     * Constant for value 'Thumbnail'
+     * @return string 'Thumbnail'
+     */
+    const VALUE_THUMBNAIL = 'Thumbnail';
+    /**
      * Constant for value 'AmbiguousAction'
      * @return string 'AmbiguousAction'
      */
@@ -94,10 +99,10 @@ class ReturnType
      */
     const VALUE_PRINT_TEMPLATE = 'PrintTemplate';
     /**
-     * Constant for value 'MailserviceStatus'
-     * @return string 'MailserviceStatus'
+     * Constant for value 'MailServiceStatus'
+     * @return string 'MailServiceStatus'
      */
-    const VALUE_MAILSERVICE_STATUS = 'MailserviceStatus';
+    const VALUE_MAIL_SERVICE_STATUS = 'MailServiceStatus';
     /**
      * Constant for value 'ValidateRecord'
      * @return string 'ValidateRecord'
@@ -108,6 +113,11 @@ class ReturnType
      * @return string 'WithAutomaticResponse'
      */
     const VALUE_WITH_AUTOMATIC_RESPONSE = 'WithAutomaticResponse';
+    /**
+     * Constant for value 'Chart'
+     * @return string 'Chart'
+     */
+    const VALUE_CHART = 'Chart';
     /**
      * Return true if value is allowed
      * @uses self::getValidValues()
@@ -125,6 +135,7 @@ class ReturnType
      * @uses self::VALUE_VALUE
      * @uses self::VALUE_RECORD
      * @uses self::VALUE_LIST
+     * @uses self::VALUE_THUMBNAIL
      * @uses self::VALUE_AMBIGUOUS_ACTION
      * @uses self::VALUE_IDENTIFICATION
      * @uses self::VALUE_XSD
@@ -137,9 +148,10 @@ class ReturnType
      * @uses self::VALUE_GLOBAL_SEARCH
      * @uses self::VALUE_LIST_CALCULATION
      * @uses self::VALUE_PRINT_TEMPLATE
-     * @uses self::VALUE_MAILSERVICE_STATUS
+     * @uses self::VALUE_MAIL_SERVICE_STATUS
      * @uses self::VALUE_VALIDATE_RECORD
      * @uses self::VALUE_WITH_AUTOMATIC_RESPONSE
+     * @uses self::VALUE_CHART
      * @return string[]
      */
     public static function getValidValues()
@@ -150,6 +162,7 @@ class ReturnType
             self::VALUE_VALUE,
             self::VALUE_RECORD,
             self::VALUE_LIST,
+            self::VALUE_THUMBNAIL,
             self::VALUE_AMBIGUOUS_ACTION,
             self::VALUE_IDENTIFICATION,
             self::VALUE_XSD,
@@ -162,9 +175,10 @@ class ReturnType
             self::VALUE_GLOBAL_SEARCH,
             self::VALUE_LIST_CALCULATION,
             self::VALUE_PRINT_TEMPLATE,
-            self::VALUE_MAILSERVICE_STATUS,
+            self::VALUE_MAIL_SERVICE_STATUS,
             self::VALUE_VALIDATE_RECORD,
             self::VALUE_WITH_AUTOMATIC_RESPONSE,
+            self::VALUE_CHART,
         );
     }
     /**

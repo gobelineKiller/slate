@@ -61,6 +61,11 @@ class OptionDialogue extends AbstractStructBase
      */
     public $WithFieldStateControl;
     /**
+     * The ListContentAsync
+     * @var int
+     */
+    public $ListContentAsync;
+    /**
      * Constructor method for OptionDialogue
      * @uses OptionDialogue::setReadable()
      * @uses OptionDialogue::setEncodingOutput()
@@ -72,6 +77,7 @@ class OptionDialogue extends AbstractStructBase
      * @uses OptionDialogue::setDisplayValue()
      * @uses OptionDialogue::setLanguageCode()
      * @uses OptionDialogue::setWithFieldStateControl()
+     * @uses OptionDialogue::setListContentAsync()
      * @param int $readable
      * @param int $encodingOutput
      * @param int $returnValue
@@ -82,8 +88,9 @@ class OptionDialogue extends AbstractStructBase
      * @param int $displayValue
      * @param int $languageCode
      * @param int $withFieldStateControl
+     * @param int $listContentAsync
      */
-    public function __construct($readable = null, $encodingOutput = null, $returnValue = null, $returnXSD = null, $hTTPForceReturn = null, $ghost = null, $defaultPagination = null, $displayValue = null, $languageCode = null, $withFieldStateControl = null)
+    public function __construct($readable = null, $encodingOutput = null, $returnValue = null, $returnXSD = null, $hTTPForceReturn = null, $ghost = null, $defaultPagination = null, $displayValue = null, $languageCode = null, $withFieldStateControl = null, $listContentAsync = null)
     {
         $this
             ->setReadable($readable)
@@ -95,7 +102,8 @@ class OptionDialogue extends AbstractStructBase
             ->setDefaultPagination($defaultPagination)
             ->setDisplayValue($displayValue)
             ->setLanguageCode($languageCode)
-            ->setWithFieldStateControl($withFieldStateControl);
+            ->setWithFieldStateControl($withFieldStateControl)
+            ->setListContentAsync($listContentAsync);
     }
     /**
      * Get Readable value
@@ -315,6 +323,28 @@ class OptionDialogue extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($withFieldStateControl)), __LINE__);
         }
         $this->WithFieldStateControl = $withFieldStateControl;
+        return $this;
+    }
+    /**
+     * Get ListContentAsync value
+     * @return int|null
+     */
+    public function getListContentAsync()
+    {
+        return $this->ListContentAsync;
+    }
+    /**
+     * Set ListContentAsync value
+     * @param int $listContentAsync
+     * @return \NOUTSoap\StructType\OptionDialogue
+     */
+    public function setListContentAsync($listContentAsync = null)
+    {
+        // validation for constraint: int
+        if (!is_null($listContentAsync) && !is_numeric($listContentAsync)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($listContentAsync)), __LINE__);
+        }
+        $this->ListContentAsync = $listContentAsync;
         return $this;
     }
     /**

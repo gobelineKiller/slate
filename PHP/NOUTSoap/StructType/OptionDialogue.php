@@ -66,6 +66,16 @@ class OptionDialogue extends AbstractStructBase
      */
     public $ListContentAsync;
     /**
+     * The VersionMin
+     * @var int
+     */
+    public $VersionMin;
+    /**
+     * The VersionPref
+     * @var int
+     */
+    public $VersionPref;
+    /**
      * Constructor method for OptionDialogue
      * @uses OptionDialogue::setReadable()
      * @uses OptionDialogue::setEncodingOutput()
@@ -78,6 +88,8 @@ class OptionDialogue extends AbstractStructBase
      * @uses OptionDialogue::setLanguageCode()
      * @uses OptionDialogue::setWithFieldStateControl()
      * @uses OptionDialogue::setListContentAsync()
+     * @uses OptionDialogue::setVersionMin()
+     * @uses OptionDialogue::setVersionPref()
      * @param int $readable
      * @param int $encodingOutput
      * @param int $returnValue
@@ -89,8 +101,10 @@ class OptionDialogue extends AbstractStructBase
      * @param int $languageCode
      * @param int $withFieldStateControl
      * @param int $listContentAsync
+     * @param int $versionMin
+     * @param int $versionPref
      */
-    public function __construct($readable = null, $encodingOutput = null, $returnValue = null, $returnXSD = null, $hTTPForceReturn = null, $ghost = null, $defaultPagination = null, $displayValue = null, $languageCode = null, $withFieldStateControl = null, $listContentAsync = null)
+    public function __construct($readable = null, $encodingOutput = null, $returnValue = null, $returnXSD = null, $hTTPForceReturn = null, $ghost = null, $defaultPagination = null, $displayValue = null, $languageCode = null, $withFieldStateControl = null, $listContentAsync = null, $versionMin = null, $versionPref = null)
     {
         $this
             ->setReadable($readable)
@@ -103,7 +117,9 @@ class OptionDialogue extends AbstractStructBase
             ->setDisplayValue($displayValue)
             ->setLanguageCode($languageCode)
             ->setWithFieldStateControl($withFieldStateControl)
-            ->setListContentAsync($listContentAsync);
+            ->setListContentAsync($listContentAsync)
+            ->setVersionMin($versionMin)
+            ->setVersionPref($versionPref);
     }
     /**
      * Get Readable value
@@ -345,6 +361,50 @@ class OptionDialogue extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($listContentAsync)), __LINE__);
         }
         $this->ListContentAsync = $listContentAsync;
+        return $this;
+    }
+    /**
+     * Get VersionMin value
+     * @return int|null
+     */
+    public function getVersionMin()
+    {
+        return $this->VersionMin;
+    }
+    /**
+     * Set VersionMin value
+     * @param int $versionMin
+     * @return \NOUTSoap\StructType\OptionDialogue
+     */
+    public function setVersionMin($versionMin = null)
+    {
+        // validation for constraint: int
+        if (!is_null($versionMin) && !is_numeric($versionMin)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($versionMin)), __LINE__);
+        }
+        $this->VersionMin = $versionMin;
+        return $this;
+    }
+    /**
+     * Get VersionPref value
+     * @return int|null
+     */
+    public function getVersionPref()
+    {
+        return $this->VersionPref;
+    }
+    /**
+     * Set VersionPref value
+     * @param int $versionPref
+     * @return \NOUTSoap\StructType\OptionDialogue
+     */
+    public function setVersionPref($versionPref = null)
+    {
+        // validation for constraint: int
+        if (!is_null($versionPref) && !is_numeric($versionPref)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($versionPref)), __LINE__);
+        }
+        $this->VersionPref = $versionPref;
         return $this;
     }
     /**

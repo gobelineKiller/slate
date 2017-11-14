@@ -47,6 +47,13 @@ class Create extends AbstractStructBase
      */
     public $UpdateData;
     /**
+     * The Final
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var int
+     */
+    public $Final;
+    /**
      * Constructor method for Create
      * @uses Create::setTable()
      * @uses Create::setParamXML()
@@ -54,14 +61,16 @@ class Create extends AbstractStructBase
      * @uses Create::setCallingColumn()
      * @uses Create::setCallingInfo()
      * @uses Create::setUpdateData()
+     * @uses Create::setFinal()
      * @param string $table
      * @param string $paramXML
      * @param string $iDMessage
      * @param string $callingColumn
      * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
      * @param string $updateData
+     * @param int $final
      */
-    public function __construct($table = null, $paramXML = null, $iDMessage = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null, $updateData = null)
+    public function __construct($table = null, $paramXML = null, $iDMessage = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null, $updateData = null, $final = null)
     {
         $this
             ->setTable($table)
@@ -69,7 +78,8 @@ class Create extends AbstractStructBase
             ->setIDMessage($iDMessage)
             ->setCallingColumn($callingColumn)
             ->setCallingInfo($callingInfo)
-            ->setUpdateData($updateData);
+            ->setUpdateData($updateData)
+            ->setFinal($final);
     }
     /**
      * Get Table value
@@ -197,6 +207,28 @@ class Create extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($updateData)), __LINE__);
         }
         $this->UpdateData = $updateData;
+        return $this;
+    }
+    /**
+     * Get Final value
+     * @return int|null
+     */
+    public function getFinal()
+    {
+        return $this->Final;
+    }
+    /**
+     * Set Final value
+     * @param int $final
+     * @return \NOUTSoap\StructType\Create
+     */
+    public function setFinal($final = null)
+    {
+        // validation for constraint: int
+        if (!is_null($final) && !is_numeric($final)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($final)), __LINE__);
+        }
+        $this->Final = $final;
         return $this;
     }
     /**

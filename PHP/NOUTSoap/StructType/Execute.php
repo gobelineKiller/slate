@@ -62,6 +62,13 @@ class Execute extends AbstractStructBase
      */
     public $BtnListMode;
     /**
+     * The Final
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var int
+     */
+    public $Final;
+    /**
      * Constructor method for Execute
      * @uses Execute::setID()
      * @uses Execute::setSentence()
@@ -72,6 +79,7 @@ class Execute extends AbstractStructBase
      * @uses Execute::setCallingColumn()
      * @uses Execute::setCallingInfo()
      * @uses Execute::setBtnListMode()
+     * @uses Execute::setFinal()
      * @param string $iD
      * @param string $sentence
      * @param string $paramXML
@@ -81,8 +89,9 @@ class Execute extends AbstractStructBase
      * @param string $callingColumn
      * @param \NOUTSoap\StructType\CallingInfoType $callingInfo
      * @param int $btnListMode
+     * @param int $final
      */
-    public function __construct($iD = null, $sentence = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $checksum = null, $displayMode = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null, $btnListMode = null)
+    public function __construct($iD = null, $sentence = null, $paramXML = null, \NOUTSoap\StructType\SpecialParamListType $specialParamList = null, $checksum = null, $displayMode = null, $callingColumn = null, \NOUTSoap\StructType\CallingInfoType $callingInfo = null, $btnListMode = null, $final = null)
     {
         $this
             ->setID($iD)
@@ -93,7 +102,8 @@ class Execute extends AbstractStructBase
             ->setDisplayMode($displayMode)
             ->setCallingColumn($callingColumn)
             ->setCallingInfo($callingInfo)
-            ->setBtnListMode($btnListMode);
+            ->setBtnListMode($btnListMode)
+            ->setFinal($final);
     }
     /**
      * Get ID value
@@ -286,6 +296,28 @@ class Execute extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($btnListMode)), __LINE__);
         }
         $this->BtnListMode = $btnListMode;
+        return $this;
+    }
+    /**
+     * Get Final value
+     * @return int|null
+     */
+    public function getFinal()
+    {
+        return $this->Final;
+    }
+    /**
+     * Set Final value
+     * @param int $final
+     * @return \NOUTSoap\StructType\Execute
+     */
+    public function setFinal($final = null)
+    {
+        // validation for constraint: int
+        if (!is_null($final) && !is_numeric($final)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($final)), __LINE__);
+        }
+        $this->Final = $final;
         return $this;
     }
     /**

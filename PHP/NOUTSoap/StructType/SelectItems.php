@@ -16,14 +16,24 @@ class SelectItems extends AbstractStructBase
      */
     public $items;
     /**
+     * The CallingColumn
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
+     */
+    public $CallingColumn;
+    /**
      * Constructor method for SelectItems
      * @uses SelectItems::setItems()
+     * @uses SelectItems::setCallingColumn()
      * @param string $items
+     * @param string $callingColumn
      */
-    public function __construct($items = null)
+    public function __construct($items = null, $callingColumn = null)
     {
         $this
-            ->setItems($items);
+            ->setItems($items)
+            ->setCallingColumn($callingColumn);
     }
     /**
      * Get items value
@@ -45,6 +55,28 @@ class SelectItems extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($items)), __LINE__);
         }
         $this->items = $items;
+        return $this;
+    }
+    /**
+     * Get CallingColumn value
+     * @return string|null
+     */
+    public function getCallingColumn()
+    {
+        return $this->CallingColumn;
+    }
+    /**
+     * Set CallingColumn value
+     * @param string $callingColumn
+     * @return \NOUTSoap\StructType\SelectItems
+     */
+    public function setCallingColumn($callingColumn = null)
+    {
+        // validation for constraint: string
+        if (!is_null($callingColumn) && !is_string($callingColumn)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($callingColumn)), __LINE__);
+        }
+        $this->CallingColumn = $callingColumn;
         return $this;
     }
     /**

@@ -16,24 +16,25 @@ class ButtonAction extends AbstractStructBase
      */
     public $CallingColumn;
     /**
-     * The Selection
+     * The ColumnSelection
      * Meta informations extracted from the WSDL
+     * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var string
+     * @var \NOUTSoap\StructType\ColumnSelection[]
      */
-    public $Selection;
+    public $ColumnSelection;
     /**
      * Constructor method for ButtonAction
      * @uses ButtonAction::setCallingColumn()
-     * @uses ButtonAction::setSelection()
+     * @uses ButtonAction::setColumnSelection()
      * @param string $callingColumn
-     * @param string $selection
+     * @param \NOUTSoap\StructType\ColumnSelection[] $columnSelection
      */
-    public function __construct($callingColumn = null, $selection = null)
+    public function __construct($callingColumn = null, array $columnSelection = array())
     {
         $this
             ->setCallingColumn($callingColumn)
-            ->setSelection($selection);
+            ->setColumnSelection($columnSelection);
     }
     /**
      * Get CallingColumn value
@@ -58,25 +59,28 @@ class ButtonAction extends AbstractStructBase
         return $this;
     }
     /**
-     * Get Selection value
-     * @return string|null
+     * Get ColumnSelection value
+     * @return \NOUTSoap\StructType\ColumnSelection[]|null
      */
-    public function getSelection()
+    public function getColumnSelection()
     {
-        return $this->Selection;
+        return $this->ColumnSelection;
     }
     /**
-     * Set Selection value
-     * @param string $selection
+     * Set ColumnSelection value
+     * @throws \InvalidArgumentException
+     * @param \NOUTSoap\StructType\ColumnSelection[] $columnSelection
      * @return \NOUTSoap\StructType\ButtonAction
      */
-    public function setSelection($selection = null)
+    public function setColumnSelection(array $columnSelection = array())
     {
-        // validation for constraint: string
-        if (!is_null($selection) && !is_string($selection)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($selection)), __LINE__);
+        foreach ($columnSelection as $buttonActionColumnSelectionItem) {
+            // validation for constraint: itemType
+            if (!$buttonActionColumnSelectionItem instanceof \NOUTSoap\StructType\ColumnSelection) {
+                throw new \InvalidArgumentException(sprintf('The ColumnSelection property can only contain items of \NOUTSoap\StructType\ColumnSelection, "%s" given', is_object($buttonActionColumnSelectionItem) ? get_class($buttonActionColumnSelectionItem) : gettype($buttonActionColumnSelectionItem)), __LINE__);
+            }
         }
-        $this->Selection = $selection;
+        $this->ColumnSelection = $columnSelection;
         return $this;
     }
     /**

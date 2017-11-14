@@ -65,6 +65,7 @@ class ClassMap
             'GetSubListContentResponse' => '\\NOUTSoap\\StructType\\GetSubListContentResponse',
             'DrillThrough' => '\\NOUTSoap\\StructType\\DrillThrough',
             'DrillThroughResponse' => '\\NOUTSoap\\StructType\\DrillThroughResponse',
+            'ColumnSelection' => '\\NOUTSoap\\StructType\\ColumnSelection',
             'ButtonAction' => '\\NOUTSoap\\StructType\\ButtonAction',
             'ButtonActionResponse' => '\\NOUTSoap\\StructType\\ButtonActionResponse',
             'ValidateResponse' => '\\NOUTSoap\\StructType\\ValidateResponse',

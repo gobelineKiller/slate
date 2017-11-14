@@ -17,6 +17,8 @@ class Request extends AbstractStructBase
     public $Table;
     /**
      * The ColList
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var \NOUTSoap\StructType\ColListType
      */
     public $ColList;
@@ -27,21 +29,29 @@ class Request extends AbstractStructBase
     public $CondList;
     /**
      * The MaxResult
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var int
      */
     public $MaxResult;
     /**
      * The Sort1
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var \NOUTSoap\StructType\SortType
      */
     public $Sort1;
     /**
      * The Sort2
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var \NOUTSoap\StructType\SortType
      */
     public $Sort2;
     /**
      * The Sort3
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var \NOUTSoap\StructType\SortType
      */
     public $Sort3;

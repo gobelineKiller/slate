@@ -32,6 +32,8 @@ class UsernameTokenType extends AbstractStructBase
     public $Created;
     /**
      * The Encryption
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
      * @var \NOUTSoap\StructType\EncryptionType
      */
     public $Encryption;

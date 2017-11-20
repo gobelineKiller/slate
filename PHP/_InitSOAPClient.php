@@ -10,10 +10,18 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-$nPort = 8092; //homer simaxv12
-$sHost = 'localhost';
-$sLogin = 'superviseur';
-$sMdp = '';
+if (empty($nPort)){
+    $nPort = 8092; //homer simaxv12
+}
+if (empty($sHost)){
+    $sHost = 'localhost';
+}
+if (empty($sLogin)){
+    $sLogin = 'superviseur';
+}
+if (empty($sMdp)){
+    $sMdp = '';
+}
 
 //autoload
 spl_autoload_extensions(".php"); // comma-separated list

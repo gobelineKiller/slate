@@ -26,20 +26,30 @@ class CreateFrom extends AbstractStructBase
      */
     public $ElemSrc;
     /**
+     * The Final
+     * Meta informations extracted from the WSDL
+     * - minOccurs: 0
+     * @var int
+     */
+    public $Final;
+    /**
      * Constructor method for CreateFrom
      * @uses CreateFrom::setTable()
      * @uses CreateFrom::setTableSrc()
      * @uses CreateFrom::setElemSrc()
+     * @uses CreateFrom::setFinal()
      * @param string $table
      * @param string $tableSrc
      * @param string $elemSrc
+     * @param int $final
      */
-    public function __construct($table = null, $tableSrc = null, $elemSrc = null)
+    public function __construct($table = null, $tableSrc = null, $elemSrc = null, $final = null)
     {
         $this
             ->setTable($table)
             ->setTableSrc($tableSrc)
-            ->setElemSrc($elemSrc);
+            ->setElemSrc($elemSrc)
+            ->setFinal($final);
     }
     /**
      * Get Table value
@@ -105,6 +115,28 @@ class CreateFrom extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($elemSrc)), __LINE__);
         }
         $this->ElemSrc = $elemSrc;
+        return $this;
+    }
+    /**
+     * Get Final value
+     * @return int|null
+     */
+    public function getFinal()
+    {
+        return $this->Final;
+    }
+    /**
+     * Set Final value
+     * @param int $final
+     * @return \NOUTSoap\StructType\CreateFrom
+     */
+    public function setFinal($final = null)
+    {
+        // validation for constraint: int
+        if (!is_null($final) && !is_numeric($final)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($final)), __LINE__);
+        }
+        $this->Final = $final;
         return $this;
     }
     /**

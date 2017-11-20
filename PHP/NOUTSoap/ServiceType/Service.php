@@ -183,7 +183,7 @@ class Service extends AbstractSoapClientBase
     /**
      * Sets the APIUUID SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \NOUTSoap\StructType\APIUUID $aPIUUID
+     * @param APIUUID $aPIUUID
      * @param string $nameSpace
      * @param bool $mustUnderstand
      * @param string $actor
@@ -191,6 +191,10 @@ class Service extends AbstractSoapClientBase
      */
     public function setSoapHeaderAPIUUID(\NOUTSoap\StructType\APIUUID $aPIUUID=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
+        // validation for constraint: string
+        if (!is_null($aPIUUID) && !is_string($aPIUUID)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($aPIUUID)), __LINE__);
+        }
         return $this->setSoapHeader($nameSpace, 'APIUUID', $aPIUUID, $mustUnderstand, $actor);
     }
     /**
@@ -222,7 +226,7 @@ class Service extends AbstractSoapClientBase
     /**
      * Sets the CustomerInfos SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \NOUTSoap\StructType\CustomerInfos $customerInfos
+     * @param CustomerInfos $customerInfos
      * @param string $nameSpace
      * @param bool $mustUnderstand
      * @param string $actor
@@ -230,6 +234,10 @@ class Service extends AbstractSoapClientBase
      */
     public function setSoapHeaderCustomerInfos(\NOUTSoap\StructType\CustomerInfos $customerInfos=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
+        // validation for constraint: string
+        if (!is_null($customerInfos) && !is_string($customerInfos)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($customerInfos)), __LINE__);
+        }
         return $this->setSoapHeader($nameSpace, 'CustomerInfos', $customerInfos, $mustUnderstand, $actor);
     }
     /**
@@ -248,7 +256,7 @@ class Service extends AbstractSoapClientBase
     /**
      * Sets the APIUser SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \NOUTSoap\StructType\APIUser $aPIUser
+     * @param APIUser $aPIUser
      * @param string $nameSpace
      * @param bool $mustUnderstand
      * @param string $actor
@@ -256,12 +264,16 @@ class Service extends AbstractSoapClientBase
      */
     public function setSoapHeaderAPIUser(\NOUTSoap\StructType\APIUser $aPIUser=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
+        // validation for constraint: int
+        if (!is_null($aPIUser) && !is_numeric($aPIUser)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($aPIUser)), __LINE__);
+        }
         return $this->setSoapHeader($nameSpace, 'APIUser', $aPIUser, $mustUnderstand, $actor);
     }
     /**
      * Sets the ActionContext SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \NOUTSoap\StructType\ActionContext $actionContext
+     * @param ActionContext $actionContext
      * @param string $nameSpace
      * @param bool $mustUnderstand
      * @param string $actor
@@ -269,12 +281,16 @@ class Service extends AbstractSoapClientBase
      */
     public function setSoapHeaderActionContext(\NOUTSoap\StructType\ActionContext $actionContext=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
+        // validation for constraint: string
+        if (!is_null($actionContext) && !is_string($actionContext)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($actionContext)), __LINE__);
+        }
         return $this->setSoapHeader($nameSpace, 'ActionContext', $actionContext, $mustUnderstand, $actor);
     }
     /**
      * Sets the AutoValidate SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \NOUTSoap\StructType\AutoValidate $autoValidate
+     * @param AutoValidate $autoValidate
      * @param string $nameSpace
      * @param bool $mustUnderstand
      * @param string $actor
@@ -282,6 +298,10 @@ class Service extends AbstractSoapClientBase
      */
     public function setSoapHeaderAutoValidate($autoValidate=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
+        // validation for constraint: int
+        if (!is_null($autoValidate) && !is_numeric($autoValidate)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($autoValidate)), __LINE__);
+        }
         return $this->setSoapHeader($nameSpace, 'AutoValidate', $autoValidate, $mustUnderstand, $actor);
     }
     /**
@@ -312,8 +332,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named ButtonAction
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces: http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -337,8 +356,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Cancel
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces: http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -531,10 +549,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Create
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -557,8 +573,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named CreateFolder
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -582,10 +597,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named CreateFrom
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -608,8 +621,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named CreateMessage
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -633,10 +645,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Delete
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -731,10 +741,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Display
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -809,8 +817,7 @@ class Service extends AbstractSoapClientBase
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
      * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
      * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -833,8 +840,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetCalculation
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -858,8 +864,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetEndListCalculation
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -883,8 +888,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetChart
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -908,8 +912,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetColInRecord
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -933,8 +936,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetSubListContent
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -958,8 +960,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetContentFolder
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -983,8 +984,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetEndAutomatism
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1008,8 +1008,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetFolderList
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1057,8 +1056,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetListMessage
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1130,8 +1128,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetPlanningInfo
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1155,8 +1152,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetStartAutomatism
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1180,8 +1176,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetTableChild
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1205,8 +1200,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named GetTemporalAutomatism
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1254,8 +1248,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named HasChanged
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1279,8 +1272,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named InitRecordFromAddress
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, ActionContext, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1304,8 +1296,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named InitRecordFromMessage
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, ActionContext, CustomerInfos, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1329,10 +1320,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named List
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1355,10 +1344,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Modify
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1381,8 +1368,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named ModifyFolder
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1406,8 +1392,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named ModifyMessage
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1431,10 +1416,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Print
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1457,8 +1440,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named ReorderList
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1482,8 +1464,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named ReorderSubList
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1507,10 +1488,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Request
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1533,8 +1512,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named RequestMessage
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, ActionContext, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1558,10 +1536,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named RequestParam
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1584,10 +1560,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named AutoComplete
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1634,10 +1608,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Search
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1660,8 +1632,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named SelectForm
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1685,8 +1656,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named SelectItems
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1710,8 +1680,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named SelectPrintTemplate
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1735,8 +1704,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named SelectChoice
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1784,8 +1752,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named SetOrderList
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1809,8 +1776,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named SetOrderSubList
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1834,10 +1800,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named TransformInto
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1860,10 +1824,8 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Update
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
-     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue,
-     * \NOUTSoap\StructType\AutoValidate
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1886,8 +1848,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named UpdateFolder
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1911,8 +1872,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named UpdateMessage
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, CustomerInfos, OptionDialogue, AutoValidate
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\OptionDialogue, \NOUTSoap\StructType\AutoValidate
      * - SOAPHeaders : optional, required, required, optional, optional, optional
      * @uses AbstractSoapClientBase::getSoapClient()
@@ -1936,8 +1896,7 @@ class Service extends AbstractSoapClientBase
      * Method to call the operation originally named Validate
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : APIUUID, UsernameToken, SessionToken, APIUser, CustomerInfos, ActionContext, OptionDialogue
-     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/,
-     * http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
+     * - SOAPHeaderNamespaces : http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/, http://www.nout.fr/wsdl/SimaxService.wsdl/
      * - SOAPHeaderTypes : \NOUTSoap\StructType\APIUUID, \NOUTSoap\StructType\UsernameTokenType, string, \NOUTSoap\StructType\APIUser, \NOUTSoap\StructType\CustomerInfos, \NOUTSoap\StructType\ActionContext, \NOUTSoap\StructType\OptionDialogue
      * - SOAPHeaders : optional, required, required, optional, optional, required, optional
      * @uses AbstractSoapClientBase::getSoapClient()

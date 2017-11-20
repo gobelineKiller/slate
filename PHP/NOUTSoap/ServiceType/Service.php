@@ -189,7 +189,7 @@ class Service extends AbstractSoapClientBase
      * @param string $actor
      * @return bool
      */
-    public function setSoapHeaderAPIUUID(\NOUTSoap\StructType\APIUUID $aPIUUID=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderAPIUUID($aPIUUID=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
         // validation for constraint: string
         if (!is_null($aPIUUID) && !is_string($aPIUUID)) {
@@ -232,7 +232,7 @@ class Service extends AbstractSoapClientBase
      * @param string $actor
      * @return bool
      */
-    public function setSoapHeaderCustomerInfos(\NOUTSoap\StructType\CustomerInfos $customerInfos=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderCustomerInfos($customerInfos=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
         // validation for constraint: string
         if (!is_null($customerInfos) && !is_string($customerInfos)) {
@@ -262,7 +262,7 @@ class Service extends AbstractSoapClientBase
      * @param string $actor
      * @return bool
      */
-    public function setSoapHeaderAPIUser(\NOUTSoap\StructType\APIUser $aPIUser=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderAPIUser($aPIUser=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
         // validation for constraint: int
         if (!is_null($aPIUser) && !is_numeric($aPIUser)) {
@@ -279,7 +279,7 @@ class Service extends AbstractSoapClientBase
      * @param string $actor
      * @return bool
      */
-    public function setSoapHeaderActionContext(\NOUTSoap\StructType\ActionContext $actionContext=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderActionContext($actionContext=null, $nameSpace = 'http://www.nout.fr/wsdl/SimaxService.wsdl/', $mustUnderstand = false, $actor = null)
     {
         // validation for constraint: string
         if (!is_null($actionContext) && !is_string($actionContext)) {

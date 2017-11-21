@@ -35,7 +35,7 @@ $options = array(
     AbstractSoapClientBase::WSDL_STREAM_CONTEXT => stream_context_create(array('http' => array(
         'header' => "x-SIMAXService-Client: Proxy-SOAPClient\nx-SIMAXService-Client-Version: 01.1631.01\nx-SIMAXService-Client-IP: ".$_SERVER["REMOTE_ADDR"],
     ))),
-    AbstractSoapClientBase::WSDL_URL => "http://$sHost:$nPort/getwsdl",
+    AbstractSoapClientBase::WSDL_URL => "http://$sHost:$nPort/getwsdl".(!empty($apiuuid) ? "?!apiuuid=$apiuuid" : ''),
     AbstractSoapClientBase::WSDL_PROXY_HOST => $sHost,
     AbstractSoapClientBase::WSDL_PROXY_PORT => "$nPort",
     AbstractSoapClientBase::WSDL_CLASSMAP => \NOUTSoap\ClassMap::get(),
@@ -43,6 +43,9 @@ $options = array(
 );
 // if getList operation is provided by the Web service
 $oSOAPClient = new \NOUTSoap\ServiceType\Service($options);
+if (!empty($apiuuid)){
+    $oSOAPClient->setSoapHeaderAPIUUID($apiuuid);
+}
 
 
 

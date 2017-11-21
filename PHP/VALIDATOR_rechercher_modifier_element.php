@@ -23,19 +23,28 @@ $sRefRecherchee='TCS00011';
 //on recherche l'element
 $stRequest = new \NOUTSoap\StructType\Request(TABLEAU, null, "<Condition><CondCol>" . COL_Recherche . "</CondCol><CondType>Equal</CondType><CondValue>$sRefRecherchee</CondValue></Condition>");
 $oSOAPClient->setSoapHeaderAutoValidate(-1);
-$resultRequest = $oSOAPClient->Request($stRequest);
-$oSOAPClient->log('Request Type de champ simple');
+try {
+    $resultRequest = $oSOAPClient->Request($stRequest);
+    $oSOAPClient->log('Request Type de champ simple');
+}
+catch(\Exception $e){
+    debug_log("Erreur", "Erreur lors de l'execution de la requete");
+    include('_deconnexion.php'); //DECONNEXION
+    die();
+}
+
+$returnType = $oSOAPClient->getSoapHeaderReturnType();
+if ($returnType != \NOUTSoap\EnumType\ReturnType::VALUE_LIST) {
+    debug_log("Erreur", "Le type de retour n'est pas celui attendu");
+    include('_deconnexion.php'); //DECONNEXION
+    die();
+}
 
 $xml = simplexml_load_string($resultRequest->xml);
 if (count($xml->children())==0){
     //pas d'élément trouvé
-
-    //Gestion du cas d'erreur
     debug_log("Erreur", "Pas d'élément trouvé pour la référence $sRefRecherchee");
-    //-------------------------------------------------------------
-    //ETAPE de DECONNEXION
-    include('_deconnexion.php');
-
+    include('_deconnexion.php'); //DECONNEXION
     die();
 }
 
@@ -48,20 +57,21 @@ $paramXML = '<id_' . TABLEAU . ">$idsimax</id_" . TABLEAU . '>';
 //il faut initialiser la modification
 $stModify = new \NOUTSoap\StructType\Modify(TABLEAU, $paramXML);
 $oSOAPClient->setSoapHeaderAutoValidate(0);
-$resultModify = $oSOAPClient->Modify($stModify);
-$oSOAPClient->log('Modify');
+try {
+    $resultModify = $oSOAPClient->Modify($stModify);
+    $oSOAPClient->log('Modify');
+}
+catch(\Exception $e){
+    debug_log("Erreur", "Erreur lors de l'execution de la requete");
+    include('_deconnexion.php'); //DECONNEXION
+    die();
+}
 
 $returnType = $oSOAPClient->getSoapHeaderReturnType();
-
 //on vérifie qu'on a bien un resultat de type AmbiguousAction
-if ($returnType != \NOUTSoap\EnumType\ReturnType::VALUE_RECORD)
-{
+if ($returnType != \NOUTSoap\EnumType\ReturnType::VALUE_RECORD){
     debug_log("Erreur", "L'élément $idsimax est inconnu");
-
-    //-------------------------------------------------------------
-    //ETAPE de DECONNEXION
-    include('_deconnexion.php');
-
+    include('_deconnexion.php');//DECONNEXION
     die();
 }
 
@@ -77,8 +87,21 @@ $updateData = "<xml>
 $stUpdate = new \NOUTSoap\StructType\Update(TABLEAU, $paramXML, null, $updateData);
 $oSOAPClient->setSoapHeaderAutoValidate(1);
 $oSOAPClient->setSoapHeaderActionContext($idContexteAction);
-$resultUpdate = $oSOAPClient->Update($stUpdate);
-$oSOAPClient->log('Update');
+try {
+    $resultUpdate = $oSOAPClient->Update($stUpdate);
+    $oSOAPClient->log('Update');
+}
+catch(\Exception $e){
+    debug_log("Erreur", "Erreur lors de l'execution de la requete");
+    include('_deconnexion.php');//DECONNEXION
+    die();
+}
+
+if (($returnType != \NOUTSoap\EnumType\ReturnType::VALUE_EMPTY) && ($returnType != \NOUTSoap\EnumType\ReturnType::VALUE_REPORT)){
+    debug_log("Erreur", "L'enregistrement c'est mal passé");
+    include('_deconnexion.php');//DECONNEXION
+    die();
+}
 
 //-------------------------------------------------------------
 //ETAPE de DECONNEXION

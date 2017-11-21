@@ -5,6 +5,9 @@
 </head>
 <body>
 <div class="container">
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action" href="WSNOUT_connexion_only.php">WSNOUT Connexion / Déconnexion</a>
+    </div>
 
     <h1>Sur Homer / simaxV12</h1>
     <div class="list-group">
